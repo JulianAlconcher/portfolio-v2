@@ -135,24 +135,26 @@ import { Github, ExternalLink, Search, Filter, Layers, Star, Sparkles, FolderGit
           </div>
 
           <!-- Project Card Content -->
-          <div class="flex flex-1 flex-col p-5 sm:p-6 justify-between space-y-4">
+          <div class="flex flex-1 flex-col p-5 sm:p-6 justify-between">
             
-            <div class="space-y-3">
-              <!-- Description -->
-              <p class="text-sm text-gray-300 leading-relaxed">
+            <!-- Top Section: Description & Challenge -->
+            <div class="space-y-3.5 flex flex-col">
+              <!-- Description with uniform height -->
+              <p class="text-sm text-gray-300 leading-relaxed line-clamp-3 min-h-[4.25rem]">
                 {project.description}
               </p>
 
-              <!-- Challenge / Note Box -->
-              <div class="rounded-xl border border-white/5 bg-white/5 p-3 text-xs text-gray-400">
-                <span class="font-semibold text-gray-200 block mb-0.5">Desafío técnico:</span>
-                <span class="text-gray-300">{project.challenge}</span>
+              <!-- Challenge / Note Box with uniform fixed height & alignment -->
+              <div class="rounded-xl border border-white/5 bg-white/5 p-3 text-xs text-gray-400 min-h-[5rem] flex flex-col justify-center">
+                <span class="font-semibold text-gray-200 block mb-0.5 text-[11px] uppercase tracking-wider">Desafío técnico</span>
+                <span class="text-gray-300 line-clamp-2 leading-relaxed">{project.challenge}</span>
               </div>
             </div>
 
-            <div class="space-y-4 pt-2">
-              <!-- Tech Badges -->
-              <div class="flex flex-wrap gap-1.5">
+            <!-- Bottom Section: Tech Badges & Links pinned to bottom -->
+            <div class="mt-4 pt-1 space-y-4">
+              <!-- Tech Badges with uniform height -->
+              <div class="flex flex-wrap content-start gap-1.5 min-h-[4rem] max-h-[4.5rem] overflow-hidden">
                 {project.tech.map((t) => (
                   <span class="rounded-md border border-white/10 bg-white/5 px-2 py-0.5 text-[11px] font-mono text-gray-300">
                     {t}
@@ -162,12 +164,12 @@ import { Github, ExternalLink, Search, Filter, Layers, Star, Sparkles, FolderGit
 
               <!-- Action Links / Footer -->
               <div class="flex items-center justify-between pt-3 border-t border-white/10 text-xs">
-                <span class="inline-flex items-center gap-1 text-gray-400 font-medium">
-                  <Layers class="h-3.5 w-3.5 text-blue-400" />
-                  {project.role}
+                <span class="inline-flex items-center gap-1 text-gray-400 font-medium truncate max-w-[140px]" title={project.role}>
+                  <Layers class="h-3.5 w-3.5 text-blue-400 shrink-0" />
+                  <span class="truncate">{project.role}</span>
                 </span>
 
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2 shrink-0">
                   {project.github && (
                     <a
                       href={project.github}
