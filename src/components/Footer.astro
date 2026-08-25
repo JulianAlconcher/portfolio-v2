@@ -1,38 +1,38 @@
 ---
-import { Github, Linkedin, Mail, ArrowUp, Heart, Code2 } from "lucide-astro";
+import { Github, Linkedin, Mail, ArrowUp } from "lucide-astro";
 ---
 
-<footer class="border-t border-zinc-800/80 bg-[#09090b] py-12 text-sm text-zinc-400">
+<footer class="border-t border-zinc-200 dark:border-zinc-800/80 bg-zinc-100/80 dark:bg-[#09090b] py-12 text-sm text-zinc-600 dark:text-zinc-400 transition-colors duration-200">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col md:flex-row items-center justify-between gap-6">
       
       <!-- Brand & Copyright -->
       <div class="flex flex-col items-center md:items-start space-y-0.5 text-center md:text-left">
-        <p class="font-bold text-white tracking-tight text-base">
+        <p class="font-bold text-zinc-900 dark:text-white tracking-tight text-base">
           Julián Alconcher
         </p>
-        <p class="text-xs text-zinc-400">
+        <p class="text-xs text-zinc-500 dark:text-zinc-400">
           Ingeniero en Sistemas de Información · Bahía Blanca, Argentina.
         </p>
-        <p class="text-[11px] text-zinc-500 font-mono pt-1">
+        <p class="text-[11px] text-zinc-400 dark:text-zinc-500 font-mono pt-1">
           © {new Date().getFullYear()} Julián Alconcher
         </p>
       </div>
 
       <!-- Tech Stack Credit -->
-      <div class="flex items-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900/60 px-3.5 py-1.5 text-xs text-zinc-400 font-mono">
+      <div class="flex items-center gap-2 rounded-lg border border-zinc-300 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/60 px-3.5 py-1.5 text-xs text-zinc-600 dark:text-zinc-400 font-mono shadow-xs">
         <span>Astro</span>
         <span>+</span>
-        <span class="text-zinc-300">Tailwind CSS</span>
+        <span class="text-zinc-900 dark:text-zinc-300">Tailwind CSS</span>
       </div>
 
       <!-- Links & Back to top -->
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2.5">
         <a
           href="https://github.com/JulianAlconcher"
           target="_blank"
           rel="noopener noreferrer"
-          class="rounded-xl border border-zinc-800 bg-zinc-900/60 p-2 text-zinc-400 hover:bg-zinc-800 hover:text-white transition-colors"
+          class="rounded-xl border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 p-2 text-zinc-700 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white transition-colors shadow-xs"
           aria-label="GitHub"
         >
           <Github class="h-4 w-4" />
@@ -42,7 +42,7 @@ import { Github, Linkedin, Mail, ArrowUp, Heart, Code2 } from "lucide-astro";
           href="https://www.linkedin.com/in/julian-alconcher"
           target="_blank"
           rel="noopener noreferrer"
-          class="rounded-xl border border-zinc-800 bg-zinc-900/60 p-2 text-zinc-400 hover:bg-zinc-800 hover:text-white transition-colors"
+          class="rounded-xl border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 p-2 text-zinc-700 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white transition-colors shadow-xs"
           aria-label="LinkedIn"
         >
           <Linkedin class="h-4 w-4" />
@@ -50,7 +50,7 @@ import { Github, Linkedin, Mail, ArrowUp, Heart, Code2 } from "lucide-astro";
 
         <a
           href="mailto:alconcherjulian@gmail.com"
-          class="rounded-xl border border-zinc-800 bg-zinc-900/60 p-2 text-zinc-400 hover:bg-zinc-800 hover:text-white transition-colors"
+          class="rounded-xl border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 p-2 text-zinc-700 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white transition-colors shadow-xs"
           aria-label="Email"
         >
           <Mail class="h-4 w-4" />
@@ -58,14 +58,13 @@ import { Github, Linkedin, Mail, ArrowUp, Heart, Code2 } from "lucide-astro";
 
         <a
           href="#"
-          class="inline-flex items-center gap-1.5 rounded-xl border border-zinc-800 bg-zinc-900/80 px-3 py-2 text-xs font-medium text-zinc-300 hover:bg-zinc-800 hover:text-white transition-colors"
+          class="inline-flex items-center gap-1.5 rounded-xl border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/80 px-3 py-2 text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-950 dark:hover:text-white transition-colors shadow-xs"
           title="Volver arriba"
         >
           <ArrowUp class="h-3.5 w-3.5" />
           <span class="hidden sm:inline">Arriba</span>
         </a>
       </div>
-
     </div>
   </div>
 </footer>

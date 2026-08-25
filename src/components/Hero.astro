@@ -1,5 +1,5 @@
 ---
-import { ArrowRight, Mail, Github, Linkedin, Terminal, Download, FileText, ExternalLink } from "lucide-astro";
+import { ArrowRight, Mail, Github, Linkedin, Terminal, Download } from "lucide-astro";
 ---
 
 <section id="home" class="relative overflow-hidden min-h-[calc(100vh-4rem)] flex items-center py-12 lg:py-0">
@@ -10,45 +10,45 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Download, FileText, Exter
       <div class="lg:col-span-7 flex flex-col items-start text-left">
         
         <!-- Location / Status Tag -->
-        <div class="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-zinc-900/80 px-3.5 py-1.5 text-xs text-zinc-300 mb-6 backdrop-blur-sm">
-          <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <div class="inline-flex items-center gap-2.5 rounded-full border border-zinc-300 dark:border-white/10 bg-zinc-100/90 dark:bg-zinc-900/80 px-3.5 py-1.5 text-xs text-zinc-700 dark:text-zinc-300 mb-6 backdrop-blur-sm shadow-xs">
+          <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
           <span>Ingeniero en Sistemas de Información · UNS</span>
         </div>
 
         <!-- Main Title -->
-        <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-white leading-[1.1] mb-5">
+        <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-zinc-900 dark:text-white leading-[1.1] mb-5">
           Julián Alconcher
         </h1>
 
         <!-- Subtitle & Bio -->
-        <p class="text-lg sm:text-xl text-zinc-300 max-w-2xl font-normal leading-relaxed mb-8">
-          Desarrollador <span class="text-white font-medium">Full-Stack & Systems</span> enfocado en arquitectura de software, aplicaciones web modernas (React, Next.js, Astro), software nativo para macOS en Swift y análisis de datos satelitales / AI.
+        <p class="text-lg sm:text-xl text-zinc-600 dark:text-zinc-300 max-w-2xl font-normal leading-relaxed mb-8">
+          Desarrollador <span class="text-zinc-900 dark:text-white font-medium">Full-Stack & Systems</span> enfocado en arquitectura de software, aplicaciones web modernas (React, Next.js, Astro), software nativo para macOS en Swift y análisis de datos satelitales / AI.
         </p>
 
         <!-- Action Buttons (Clean & Solid) -->
         <div class="flex flex-wrap items-center gap-3 mb-10">
           <a
             href="#proyectos"
-            class="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-zinc-900 hover:bg-zinc-200 transition-colors"
+            class="inline-flex items-center gap-2 rounded-xl bg-zinc-900 dark:bg-white px-5 py-2.5 text-sm font-semibold text-white dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors shadow-sm"
           >
             <span>Ver Proyectos</span>
-            <ArrowRight class="h-4 w-4 text-zinc-700" />
+            <ArrowRight class="h-4 w-4 text-zinc-400 dark:text-zinc-700" />
           </a>
 
           <a
             href="/CV_Julian_Alconcher.pdf"
             download="CV_Julian_Alconcher.pdf"
-            class="inline-flex items-center gap-2 rounded-xl border border-zinc-700 bg-zinc-900/90 px-4 py-2.5 text-sm font-semibold text-zinc-200 hover:bg-zinc-800 hover:text-white transition-colors"
+            class="inline-flex items-center gap-2 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900/90 px-4 py-2.5 text-sm font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-950 dark:hover:text-white transition-colors shadow-xs"
           >
-            <Download class="h-4 w-4 text-zinc-400" />
+            <Download class="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
             <span>Descargar CV</span>
           </a>
 
           <a
             href="#contacto"
-            class="inline-flex items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-900/50 px-4 py-2.5 text-sm font-semibold text-zinc-300 hover:bg-zinc-800 hover:text-white transition-colors"
+            class="inline-flex items-center gap-2 rounded-xl border border-zinc-300 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/50 px-4 py-2.5 text-sm font-semibold text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white transition-colors"
           >
-            <Mail class="h-4 w-4 text-zinc-400" />
+            <Mail class="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
             <span>Contacto</span>
           </a>
 
@@ -57,7 +57,7 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Download, FileText, Exter
               href="https://github.com/JulianAlconcher"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center h-10 w-10 rounded-xl border border-zinc-800 bg-zinc-900/60 text-zinc-400 hover:bg-zinc-800 hover:text-white transition-colors"
+              class="inline-flex items-center justify-center h-10 w-10 rounded-xl border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white transition-colors shadow-xs"
               aria-label="GitHub"
             >
               <Github class="h-4 w-4" />
@@ -67,7 +67,7 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Download, FileText, Exter
               href="https://www.linkedin.com/in/julian-alconcher"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center h-10 w-10 rounded-xl border border-zinc-800 bg-zinc-900/60 text-zinc-400 hover:bg-zinc-800 hover:text-white transition-colors"
+              class="inline-flex items-center justify-center h-10 w-10 rounded-xl border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white transition-colors shadow-xs"
               aria-label="LinkedIn"
             >
               <Linkedin class="h-4 w-4" />
@@ -76,18 +76,18 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Download, FileText, Exter
         </div>
 
         <!-- Stats Bar (Understated & Crisp) -->
-        <div class="grid grid-cols-3 gap-6 pt-6 border-t border-zinc-800/80 w-full max-w-lg text-left">
+        <div class="grid grid-cols-3 gap-6 pt-6 border-t border-zinc-200 dark:border-zinc-800/80 w-full max-w-lg text-left">
           <div>
-            <p class="text-xl font-bold text-white font-mono">16+</p>
-            <p class="text-xs text-zinc-400 mt-0.5">Repositorios</p>
+            <p class="text-xl font-bold text-zinc-900 dark:text-white font-mono">15</p>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">Repositorios</p>
           </div>
           <div>
-            <p class="text-xl font-bold text-white font-mono">UNS</p>
-            <p class="text-xs text-zinc-400 mt-0.5">Ing. en Sistemas</p>
+            <p class="text-xl font-bold text-zinc-900 dark:text-white font-mono">UNS</p>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">Ing. en Sistemas</p>
           </div>
           <div>
-            <p class="text-xl font-bold text-emerald-400 font-mono">DCIC</p>
-            <p class="text-xs text-zinc-400 mt-0.5">Ciberseguridad</p>
+            <p class="text-xl font-bold text-emerald-600 dark:text-emerald-400 font-mono">DCIC</p>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">Ciberseguridad</p>
           </div>
         </div>
 
@@ -98,7 +98,7 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Download, FileText, Exter
         <div class="relative mx-auto w-full max-w-lg">
           
           <!-- Terminal Card -->
-          <div class="rounded-2xl border border-zinc-800 bg-[#0d0d11] shadow-xl overflow-hidden font-mono text-xs sm:text-sm">
+          <div class="rounded-2xl border border-zinc-300 dark:border-zinc-800 bg-[#0d0d11] shadow-xl overflow-hidden font-mono text-xs sm:text-sm">
             <!-- Window Bar -->
             <div class="flex items-center justify-between px-4 py-2.5 border-b border-zinc-800 bg-zinc-900/50">
               <div class="flex items-center gap-2">
