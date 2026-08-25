@@ -144,6 +144,7 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Download } from "lucide-a
               <button type="button" class="quick-cmd rounded px-2 py-0.5 bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white transition-colors" data-cmd="projects">projects</button>
               <button type="button" class="quick-cmd rounded px-2 py-0.5 bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white transition-colors" data-cmd="skills">skills</button>
               <button type="button" class="quick-cmd rounded px-2 py-0.5 bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white transition-colors" data-cmd="cat about.txt">about</button>
+              <button type="button" class="quick-cmd rounded px-2 py-0.5 bg-amber-500/20 text-amber-300 border border-amber-500/30 hover:bg-amber-500/30 hover:text-white transition-colors font-bold" data-cmd="game">🎮 game</button>
               <button type="button" class="quick-cmd rounded px-2 py-0.5 bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white transition-colors" data-cmd="clear">clear</button>
             </div>
           </div>
@@ -171,9 +172,11 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Download } from "lucide-a
     const t = translations[lang].terminal;
     return {
       help: lang === "es"
-        ? "Comandos disponibles:\n  • help          : Ver lista de comandos\n  • projects      : Listar proyectos destacados\n  • skills        : Listar tecnologías principales\n  • whoami        : Información de perfil\n  • cat about.txt : Leer biografía y educación\n  • cat contact.txt: Información de contacto\n  • clear         : Limpiar pantalla\n  • github        : Abrir perfil de GitHub"
-        : "Available commands:\n  • help          : Show command list\n  • projects      : List flagship projects\n  • skills        : List primary tech stack\n  • whoami        : User profile info\n  • cat about.txt : Read bio & education\n  • cat contact.txt: Contact info\n  • clear         : Clear terminal output\n  • github        : Open GitHub profile",
+        ? "Comandos disponibles:\n  • help          : Ver lista de comandos\n  • game / play   : 🎮 Jugar Bug Runner\n  • projects      : Listar proyectos destacados\n  • skills        : Listar tecnologías principales\n  • whoami        : Información de perfil\n  • cat about.txt : Leer biografía y educación\n  • cat contact.txt: Información de contacto\n  • clear         : Limpiar pantalla\n  • github        : Abrir perfil de GitHub"
+        : "Available commands:\n  • help          : Show command list\n  • game / play   : 🎮 Play Bug Runner\n  • projects      : List flagship projects\n  • skills        : List primary tech stack\n  • whoami        : User profile info\n  • cat about.txt : Read bio & education\n  • cat contact.txt: Contact info\n  • clear         : Clear terminal output\n  • github        : Open GitHub profile",
       whoami: t.whoami,
+      game: lang === "es" ? "🎮 ¡Iniciando Bug Runner! Desplazando al arcade..." : "🎮 Starting Bug Runner! Scrolling to arcade...",
+      play: lang === "es" ? "🎮 ¡Iniciando Bug Runner! Desplazando al arcade..." : "🎮 Starting Bug Runner! Scrolling to arcade...",
       "cat about.txt": t.aboutText,
       "cat skills.txt": t.skillsText,
       "cat contact.txt": t.contactText,
@@ -250,6 +253,15 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Download } from "lucide-a
 
     if (lower === "github") {
       window.open("https://github.com/JulianAlconcher", "_blank");
+    }
+
+    if (lower === "game" || lower === "play") {
+      const arcadeEl = document.getElementById("arcade");
+      if (arcadeEl) {
+        setTimeout(() => {
+          arcadeEl.scrollIntoView({ behavior: "smooth" });
+        }, 400);
+      }
     }
 
     const outputLine = document.createElement("div");

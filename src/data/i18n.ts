@@ -1,6 +1,20 @@
 export type Lang = "es" | "en";
 
 export interface Translations {
+  game: {
+    badge: string;
+    title: string;
+    desc: string;
+    instructionsDesktop: string;
+    instructionsMobile: string;
+    score: string;
+    highScore: string;
+    start: string;
+    restart: string;
+    gameOver: string;
+    soundOn: string;
+    soundOff: string;
+  };
   modal: {
     overview: string;
     architecture: string;
@@ -111,6 +125,20 @@ export interface Translations {
 
 export const translations: Record<Lang, Translations> = {
   es: {
+    game: {
+      badge: "Easter Egg & Mini-Juego",
+      title: "Bug Runner — Esquiva los Bugs",
+      desc: "¿Mucho código por hoy? Tómate un respiro y ayuda al desarrollador a esquivar errores 500, memory leaks y bugs de producción.",
+      instructionsDesktop: "Presiona Espacio o Flecha Arriba para saltar",
+      instructionsMobile: "Toca la pantalla para saltar",
+      score: "Puntaje",
+      highScore: "Récord",
+      start: "Jugar ahora",
+      restart: "Reintentar",
+      gameOver: "¡Oops! ¡El bug llegó a producción!",
+      soundOn: "Sonido activado",
+      soundOff: "Sonido silenciado"
+    },
     modal: {
       overview: "Descripción General",
       architecture: "Arquitectura & Decisiones Técnicas",
@@ -245,6 +273,20 @@ export const translations: Record<Lang, Translations> = {
     }
   },
   en: {
+    game: {
+      badge: "Easter Egg & Mini-Game",
+      title: "Bug Runner — Dodge the Bugs",
+      desc: "Too much debugging for today? Take a break and help the developer dodge 500 server errors, memory leaks, and production bugs.",
+      instructionsDesktop: "Press Space or Up Arrow to jump",
+      instructionsMobile: "Tap the screen to jump",
+      score: "Score",
+      highScore: "High Score",
+      start: "Play Now",
+      restart: "Try Again",
+      gameOver: "Oops! The bug reached production!",
+      soundOn: "Sound On",
+      soundOff: "Sound Muted"
+    },
     modal: {
       overview: "Overview",
       architecture: "Architecture & Technical Decisions",
