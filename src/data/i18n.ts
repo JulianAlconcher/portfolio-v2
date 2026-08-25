@@ -235,24 +235,24 @@ export const translations: Record<Lang, Translations> = {
       about: "About Me",
       contact: "Contact",
       talk: "Contact",
-      sublabel: "Systems Engineer · Full Stack"
+      sublabel: "Software Engineer · Full Stack"
     },
     hero: {
-      status: "Information Systems Engineer · UNS",
-      degree: "Information Systems Engineer",
+      status: "Software Engineer · UNS",
+      degree: "Software Engineer",
       bio: "and Full Stack Developer. I build modern web applications and high-performance software using technologies like React, Next.js, TypeScript, Node.js, Python, PostgreSQL, Swift, and Tailwind CSS.",
       btnProjects: "View Projects",
       btnCv: "Download Resume",
       btnContact: "Contact Me",
       statsRepos: "Repositories",
-      statsDegree: "Systems Eng.",
+      statsDegree: "Software Eng.",
       statsCyber: "Cybersecurity"
     },
     terminal: {
       helpHint: "Type help to list available commands.",
       shortcuts: "Shortcuts:",
-      whoami: "Julián Alconcher — Information Systems Engineer (UNS) & Full Stack Developer",
-      aboutText: "Information Systems Engineer graduated from Universidad Nacional del Sur (UNS) and Full Stack Developer. Strong experience in TypeScript, React, Next.js, Node.js, Python, PostgreSQL, Swift (macOS), and Intelligent Cybersecurity (DCIC-UNS).",
+      whoami: "Julián Alconcher — Software Engineer (UNS) & Full Stack Developer",
+      aboutText: "Software Engineer graduated from Universidad Nacional del Sur (UNS) and Full Stack Developer. Strong experience in TypeScript, React, Next.js, Node.js, Python, PostgreSQL, Swift (macOS), and Intelligent Cybersecurity (DCIC-UNS).",
       skillsText: "Languages: TypeScript, Python, Swift, Java, C, SQL\nFrontend: React, Next.js, Astro, Tailwind CSS\nBackend: Node.js, Python, PostgreSQL, Prisma, REST APIs\nSecurity: Intelligent Cybersecurity, Vulnerability Assessment",
       contactText: "Email: alconcherjulian@gmail.com | LinkedIn: /in/julian-alconcher | GitHub: /JulianAlconcher",
       projectsText: "AgroLens (Satellite ML), EJCO (Web Astro), GymLAB (Computer Vision), MovieMerch (E-Commerce), MyNetBuddy (macOS/Swift), DuckWallet (Fintech)."
@@ -310,9 +310,9 @@ export const translations: Record<Lang, Translations> = {
     about: {
       profileTag: "Professional Profile",
       heading: "Software engineering backed by solid foundations, best practices, and cybersecurity.",
-      p1: "Graduated with a degree in Information Systems Engineering from Universidad Nacional del Sur (UNS) with experience in end-to-end web development, native applications, and data processing.",
+      p1: "Graduated as a Software Engineer from Universidad Nacional del Sur (UNS) with experience in end-to-end web development, native applications, and data processing.",
       p2: "Currently pursuing the Postgraduate Diploma in Intelligent Cybersecurity at DCIC - UNS, deepening expertise in vulnerability analysis, information security, and resilient architectures.",
-      degreeTitle: "Information Systems Engineer",
+      degreeTitle: "Software Engineer",
       degreeSub: "Univ. Nacional del Sur (UNS) · 2019 – 2026",
       degreeBadge: "Graduated",
       cyberTitle: "Intelligent Cybersecurity Diploma",
@@ -349,7 +349,7 @@ export const translations: Record<Lang, Translations> = {
       redirectNotice: "Redirecting to your email client to send the message..."
     },
     footer: {
-      location: "Information Systems Engineer · Bahía Blanca, Argentina.",
+      location: "Software Engineer · Bahía Blanca, Argentina.",
       rights: "All rights reserved.",
       backToTop: "Top"
     }
