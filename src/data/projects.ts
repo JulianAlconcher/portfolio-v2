@@ -32,11 +32,6 @@ export const categories: Category[] = [
     "count": 4
   },
   {
-    "id": "systems",
-    "label": "Sistemas & macOS",
-    "count": 2
-  },
-  {
     "id": "web",
     "label": "Web & Full Stack",
     "count": 4
@@ -47,6 +42,16 @@ export const categories: Category[] = [
     "count": 1
   },
   {
+    "id": "academic",
+    "label": "IA, Visión & CS",
+    "count": 5
+  },
+  {
+    "id": "systems",
+    "label": "Sistemas & macOS",
+    "count": 2
+  },
+  {
     "id": "fintech",
     "label": "Fintech",
     "count": 1
@@ -55,11 +60,6 @@ export const categories: Category[] = [
     "id": "tools",
     "label": "Dev Tools & Bots",
     "count": 3
-  },
-  {
-    "id": "academic",
-    "label": "Algoritmos & Core CS",
-    "count": 5
   }
 ];
 
@@ -67,38 +67,107 @@ export const projects: Project[] = [
   {
     "id": "agrolens",
     "title": "AgroLens",
-    "description": "Plataforma de análisis satelital para monitoreo de suelos agrícolas y cultivos. Procesa imágenes multiespectrales (Sentinel-2), índices de vegetación (NDVI, SAVI) y modelos predictivos para la toma de decisiones agronómicas.",
-    "challenge": "Procesar y calibrar capas satelitales multiespectrales de alta resolución de manera eficiente en el navegador.",
+    "description": "Plataforma de agricultura de precisión (Proyecto Final de Carrera) que automatiza la obtención y procesamiento de imágenes satelitales (Sentinel-2), datos climáticos e índices espectrales (NDVI, SAVI). Implementa modelos de K-Means y Random Forest para caracterizar la estructura y el estado fenológico de los cultivos.",
+    "challenge": "Automatizar el pipeline satelital e inferencia de modelos de Machine Learning integrados en una interfaz web reactiva de alto rendimiento.",
     "category": "agrotech",
     "featured": true,
     "tech": [
-      "TypeScript",
+      "Python",
+      "React",
       "Sentinel-2",
-      "NDVI",
       "Machine Learning",
-      "Remote Sensing",
-      "GIS"
+      "K-Means",
+      "Random Forest",
+      "NDVI"
     ],
-    "role": "Lead Developer",
+    "role": "Lead Developer (Proyecto Final)",
     "github": "https://github.com/JulianAlconcher/AgroLens",
     "demo": null,
     "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1600",
     "stars": 3,
-    "badge": "AgroTech / AI"
+    "badge": "Proyecto Final de Carrera"
+  },
+  {
+    "id": "ejco-website",
+    "title": "Estudio Jurídico EJCO",
+    "description": "Sitio web institucional en producción para el Estudio Jurídico Centurión Otharan. Diseñado para ofrecer máxima velocidad de carga, experiencia de usuario fluida, branding corporativo, formulario de contacto y optimización SEO integral.",
+    "challenge": "Crear una presencia digital sobria y profesional con tiempos de carga sub-segundo y responsive design perfecto.",
+    "category": "web",
+    "featured": true,
+    "tech": [
+      "Astro",
+      "Tailwind CSS",
+      "TypeScript",
+      "UI/UX",
+      "SEO",
+      "Responsive Design"
+    ],
+    "role": "Web Designer & Developer",
+    "github": null,
+    "demo": "https://www.ejco.com.ar/",
+    "image": "/ejco.png",
+    "stars": 0,
+    "badge": "Sitio en Producción"
+  },
+  {
+    "id": "gymlab-fisica",
+    "title": "GymLAB — Análisis de Ejercicios con IA",
+    "description": "Aplicación web para análisis biomecánico de movimientos físicos y ejercicios mediante visión por computadora con MediaPipe y modelos en Python. Procesa series de datos angulares y métricas de repetición para mejorar la técnica deportiva y evitar lesiones.",
+    "challenge": "Extracción y cálculo de ángulos articulares en tiempo real a partir de streams de video con baja latencia.",
+    "category": "academic",
+    "featured": true,
+    "tech": [
+      "Python",
+      "MediaPipe",
+      "Computer Vision",
+      "React",
+      "Pandas",
+      "NumPy"
+    ],
+    "role": "Developer & Researcher",
+    "github": "https://github.com/JulianAlconcher/GymLAB-Proyecto-Fisica-2024",
+    "demo": null,
+    "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1600",
+    "stars": 3,
+    "badge": "Visión por Computadora & IA"
+  },
+  {
+    "id": "moviemerch-ecommerce",
+    "title": "MovieMerch E-Commerce",
+    "description": "Plataforma completa de comercio electrónico para venta de merchandising cinematográfico. Incluye catálogo reactivo, filtrado dinámico, autenticación, lógica backend con endpoints REST, base de datos PostgreSQL, Prisma ORM e integración de pasarela de pagos.",
+    "challenge": "Diseñar una arquitectura transaccional robusta con gestión de stock en tiempo real y flujo de checkout sin fricciones.",
+    "category": "web",
+    "featured": true,
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Prisma ORM",
+      "MercadoPago",
+      "REST APIs"
+    ],
+    "role": "Full Stack Developer",
+    "github": "https://github.com/JulianAlconcher/E-commerce-NextJS-MovieMerch",
+    "demo": null,
+    "image": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1600",
+    "stars": 0,
+    "badge": "E-Commerce Full Stack"
   },
   {
     "id": "mynetbuddy",
     "title": "MyNetBuddy",
-    "description": "App nativa de macOS para la barra de menú. Permite priorizar la interfaz de red activa (Ethernet o Wi-Fi) en configuraciones dual-WAN, monitoreo de interfaces en tiempo real y medición integrada de velocidad de descarga estilo fast.com.",
-    "challenge": "Interactuar a bajo nivel con la pila de red y preferencias de macOS de forma ligera sin consumo de CPU excesivo.",
+    "description": "App nativa de macOS que vive en la barra de menú. Permite priorizar la interfaz de red activa (Ethernet o Wi-Fi) en entornos dual-WAN, monitoreo de interfaces de red en tiempo real y medición integrada de velocidad de descarga estilo fast.com.",
+    "challenge": "Interactuar a bajo nivel con la pila de red y preferencias de macOS de forma ligera y eficiente.",
     "category": "systems",
-    "featured": true,
+    "featured": false,
     "tech": [
       "Swift",
       "macOS",
       "Networking",
       "Dual-WAN",
-      "AppKit / SwiftUI"
+      "AppKit",
+      "SwiftUI"
     ],
     "role": "Developer & Creator",
     "github": "https://github.com/JulianAlconcher/MyNetBuddy",
@@ -110,10 +179,10 @@ export const projects: Project[] = [
   {
     "id": "duckwallet",
     "title": "DuckWallet",
-    "description": "Plataforma financiera que analiza y clasifica diariamente el Top 5 de CEDEARs con mayor fortaleza técnica y volumen en el mercado argentino, sincronizando métricas de las acciones subyacentes en NASDAQ y NYSE.",
-    "challenge": "Automatizar la ingesta y ponderación de datos bursátiles en tiempo real con una interfaz moderna y clara.",
+    "description": "Plataforma financiera que analiza y clasifica diariamente el Top 5 de CEDEARs con mayor fortaleza técnica y volumen, evaluando el comportamiento de las acciones subyacentes en NASDAQ y NYSE.",
+    "challenge": "Automatizar la ingesta y cálculo de indicadores técnicos bursátiles con actualización diaria.",
     "category": "fintech",
-    "featured": true,
+    "featured": false,
     "tech": [
       "Python",
       "TypeScript",
@@ -130,31 +199,32 @@ export const projects: Project[] = [
     "badge": "Fintech App"
   },
   {
-    "id": "ejco-website",
-    "title": "Estudio Jurídico EJCO",
-    "description": "Sitio web institucional de alta fidelidad para el Estudio Jurídico Centurión Otharan. Diseñado para ofrecer máxima velocidad de carga, experiencia de usuario fluida, branding corporativo y optimización SEO.",
-    "challenge": "Crear una identidad visual sobria y profesional con tiempos de carga sub-segundo y responsive design perfecto.",
+    "id": "hospitales2000",
+    "title": "Hospitales 2000 (Gestión Hospitalaria)",
+    "description": "Sistema integral de gestión hospitalaria y atención médica con operaciones CRUD completas, módulos de pacientes, turnos clínicos, facturación y asignación de recursos.",
+    "challenge": "Modelado relacional consistente y validación estricta de concurrencia en la asignación de turnos médicos.",
     "category": "web",
-    "featured": true,
+    "featured": false,
     "tech": [
-      "Astro",
-      "Tailwind CSS",
+      "Next.js",
       "TypeScript",
-      "SEO",
-      "UI/UX"
+      "Prisma ORM",
+      "SQL",
+      "Tailwind CSS",
+      "Healthcare"
     ],
-    "role": "Web Designer & Dev",
-    "github": null,
-    "demo": "https://www.ejco.com.ar/",
-    "image": "/ejco.png",
+    "role": "Full Stack Developer",
+    "github": "https://github.com/JulianAlconcher/Hospitales2000",
+    "demo": "https://hospitales2000.vercel.app",
+    "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1600",
     "stars": 0,
-    "badge": "Production Client"
+    "badge": "Gestión Hospitalaria"
   },
   {
     "id": "network-monitor",
     "title": "NetworkMonitor",
-    "description": "Solución minimalista de alta performance para monitoreo continuo de conectividad, latencia y disponibilidad en entornos de red dual-WAN y servidores locales.",
-    "challenge": "Detección precisa de micro-cortes y fallos en enlaces sin saturar el tráfico del nodo.",
+    "description": "Solución minimalista de alta performance para monitoreo continuo de conectividad, latencia y diagnóstico en redes con doble proveedor de internet (dual-WAN).",
+    "challenge": "Detección rápida de micro-cortes sin saturar el tráfico del nodo de red.",
     "category": "systems",
     "featured": false,
     "tech": [
@@ -174,7 +244,7 @@ export const projects: Project[] = [
   {
     "id": "ratitas-bot",
     "title": "Ratitas-Bot",
-    "description": "Bot automatizado de Discord con handlers de eventos en tiempo real, comandos dinámicos, tracking de presencia de usuarios y respuestas interactivas.",
+    "description": "Bot automatizado para Discord con handlers de eventos en tiempo real, comandos interactivos y detección de presencia.",
     "challenge": "Manejo asíncrono eficiente de eventos de la API de Discord con alta disponibilidad.",
     "category": "bots",
     "featured": false,
@@ -194,8 +264,8 @@ export const projects: Project[] = [
   {
     "id": "zed-ide-setup",
     "title": "Zed IDE Setup",
-    "description": "Configuración automatizada y modular para el editor de código Zed en macOS y Linux. Incluye esquemas de symlinks, linters, keybindings personalizados y perfiles de desarrollo.",
-    "challenge": "Garantizar portabilidad y sincronización instantánea entre diferentes estaciones de trabajo UNIX.",
+    "description": "Configuración automatizada y modular para el editor de código de alto rendimiento Zed en macOS y Linux mediante enlaces simbólicos (symlinks).",
+    "challenge": "Sincronización fluida de configuraciones, keybindings y linters entre distintas estaciones UNIX.",
     "category": "tools",
     "featured": false,
     "tech": [
@@ -215,8 +285,8 @@ export const projects: Project[] = [
   {
     "id": "gymplex",
     "title": "GymPlex",
-    "description": "Plataforma web para planificación de entrenamientos, seguimiento de progreso físico y gestión integral de rutinas de fuerza e hipertrofia.",
-    "challenge": "Modelar estructuras dinámicas de ejercicios, series, repeticiones y cálculo de volumen semanal.",
+    "description": "Plataforma web para planificación de entrenamientos, estructuración de rutinas de fuerza y seguimiento de volumen semanal.",
+    "challenge": "Modelar estructuras reactivas de series, repeticiones y cargas progresivas.",
     "category": "web",
     "featured": false,
     "tech": [
@@ -228,57 +298,15 @@ export const projects: Project[] = [
     "role": "Full Stack Developer",
     "github": "https://github.com/JulianAlconcher/GymPlex",
     "demo": null,
-    "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1600",
+    "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=1600",
     "stars": 3,
-    "badge": "Web Platform"
-  },
-  {
-    "id": "gymlab-fisica",
-    "title": "GymLAB Physics Simulation",
-    "description": "Suite de simulación numérica y modelado computacional para experimentos de física. Procesamiento de series de datos experimentales, regresiones y cálculo de errores.",
-    "challenge": "Integración de métodos numéricos estables y visualización precisa de curvas de movimiento.",
-    "category": "academic",
-    "featured": false,
-    "tech": [
-      "Python",
-      "NumPy",
-      "Matplotlib",
-      "Physics Modeling",
-      "Data Analysis"
-    ],
-    "role": "Developer & Researcher",
-    "github": "https://github.com/JulianAlconcher/GymLAB-Proyecto-Fisica-2024",
-    "demo": null,
-    "image": "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?auto=format&fit=crop&q=80&w=1600",
-    "stars": 3,
-    "badge": "Science & Physics"
-  },
-  {
-    "id": "moviemerch-ecommerce",
-    "title": "MovieMerch E-Commerce",
-    "description": "Tienda online moderna desarrollada en Next.js para venta de merchandising cinematográfico. Incluye catálogo interactivo, filtrado dinámico, carrito de compras y checkout optimizado.",
-    "challenge": "Implementar server-side rendering y gestión reactiva del estado del carrito con una UI atractiva.",
-    "category": "web",
-    "featured": false,
-    "tech": [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "E-Commerce",
-      "Vercel"
-    ],
-    "role": "Frontend Developer",
-    "github": "https://github.com/JulianAlconcher/E-commerce-NextJS-MovieMerch",
-    "demo": null,
-    "image": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1600",
-    "stars": 0,
-    "badge": "E-Commerce"
+    "badge": "Web App"
   },
   {
     "id": "studyscript",
     "title": "StudyScript",
-    "description": "Herramienta CLI diseñada para arrancar y cronometrar sesiones de estudio productivas en menos de 2 segundos, integrando logging y estadísticas de concentración.",
-    "challenge": "Crear una experiencia de terminal ultra-rápida y sin fricciones.",
+    "description": "Utilidad de línea de comandos diseñada para arrancar sesiones de estudio productivas en menos de 2 segundos con registro de métricas.",
+    "challenge": "Experiencia de terminal ultra-rápida y sin fricciones en Python.",
     "category": "tools",
     "featured": false,
     "tech": [
@@ -295,31 +323,10 @@ export const projects: Project[] = [
     "badge": "CLI Utility"
   },
   {
-    "id": "hospitales2000",
-    "title": "Hospitales 2000 (Web & Mobile)",
-    "description": "Sistema integral de gestión de turnos, historiales médicos y recursos hospitalarios con arquitectura desacoplada para cliente Web y app Móvil.",
-    "challenge": "Sincronización consistente de flujos clínicos y validación estricta de turnos simultáneos.",
-    "category": "web",
-    "featured": false,
-    "tech": [
-      "TypeScript",
-      "React",
-      "Mobile",
-      "REST APIs",
-      "Healthcare"
-    ],
-    "role": "Full Stack Developer",
-    "github": "https://github.com/JulianAlconcher/Hospitales2000",
-    "demo": "https://hospitales2000.vercel.app",
-    "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1600",
-    "stars": 0,
-    "badge": "Healthcare System"
-  },
-  {
     "id": "sistemas-operativos",
     "title": "Operating Systems Core",
-    "description": "Proyectos y módulos de bajo nivel implementando conceptos fundamentales de sistemas operativos: planificación de CPU, memoria virtual, concurrencia con semáforos/mutex y llamadas al sistema.",
-    "challenge": "Garantizar exclusión mutua y prevención de deadlocks en condiciones de alta concurrencia.",
+    "description": "Implementaciones de bajo nivel de algoritmos de sistemas operativos: planificación de CPU, memoria virtual, concurrencia con semáforos/mutex y llamadas al sistema POSIX.",
+    "challenge": "Garantizar sincronización y prevención de deadlocks en condiciones de concurrencia extrema.",
     "category": "academic",
     "featured": false,
     "tech": [
@@ -338,9 +345,9 @@ export const projects: Project[] = [
   },
   {
     "id": "tdd-oop-projects",
-    "title": "OOP & Clean Architecture (TDP 1, 2, 3)",
-    "description": "Serie de proyectos de desarrollo orientado a objetos aplicando patrones de diseño GoF (State, Factory, Strategy, MVC), desacoplamiento arquitectónico y pruebas exhaustivas.",
-    "challenge": "Estructurar sistemas complejos con alta cohesión y bajo acoplamiento respetando principios SOLID.",
+    "title": "OOP & Clean Architecture (TDP)",
+    "description": "Proyectos aplicando patrones de diseño GoF (State, Factory, Observer, Strategy, MVC), desacoplamiento arquitectónico y principios SOLID.",
+    "challenge": "Estructurar sistemas orientados a objetos con alta cohesión y bajo acoplamiento.",
     "category": "academic",
     "featured": false,
     "tech": [
@@ -348,21 +355,20 @@ export const projects: Project[] = [
       "OOP",
       "Design Patterns",
       "SOLID",
-      "Architecture",
-      "Swing/GUI"
+      "Clean Architecture"
     ],
     "role": "Developer",
     "github": "https://github.com/JulianAlconcher/tdp-proyecto-3",
     "demo": null,
     "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1600",
     "stars": 7,
-    "badge": "Architecture & OOP"
+    "badge": "OOP & Patterns"
   },
   {
     "id": "priority-queue-c",
     "title": "Priority Queue & Data Structures",
-    "description": "Implementación genérica y optimizada de colas de prioridad en C, junto con librerías de tipos abstractos de datos (árboles binarios, AVL, grafos y tablas hash).",
-    "challenge": "Optimización de punteros, manejo manual de memoria sin leaks (valgrind-clean) y complejidad algorítmica óptima.",
+    "description": "Implementación genérica y optimizada de colas de prioridad en C y tipos abstractos de datos (árboles binarios, AVL, grafos y tablas hash).",
+    "challenge": "Manejo manual de memoria sin fugas (valgrind-clean) y complejidad temporal óptima.",
     "category": "academic",
     "featured": false,
     "tech": [
@@ -382,8 +388,8 @@ export const projects: Project[] = [
   {
     "id": "game-2248-prolog",
     "title": "2248 Logic Game (React + Prolog)",
-    "description": "Recreación del juego de combinación numérica 2248 con interfaz interactiva en React y motor de resolución lógica de reglas y caminos en Prolog.",
-    "challenge": "Conectar el paradigma de programación lógica con un frontend reactivo moderno.",
+    "description": "Recreación del juego de combinación numérica 2248 con interfaz interactiva en React y motor lógico de resolución de caminos en Prolog.",
+    "challenge": "Integrar el paradigma de programación lógica con un frontend reactivo moderno.",
     "category": "academic",
     "featured": false,
     "tech": [
