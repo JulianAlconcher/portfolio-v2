@@ -1,6 +1,14 @@
 export type Lang = "es" | "en";
 
 export interface Translations {
+  modal: {
+    overview: string;
+    architecture: string;
+    features: string;
+    impact: string;
+    close: string;
+    viewDetails: string;
+  };
   nav: {
     projects: string;
     skills: string;
@@ -103,6 +111,14 @@ export interface Translations {
 
 export const translations: Record<Lang, Translations> = {
   es: {
+    modal: {
+      overview: "Descripción General",
+      architecture: "Arquitectura & Decisiones Técnicas",
+      features: "Funcionalidades Clave",
+      impact: "Impacto & Resultados",
+      close: "Cerrar",
+      viewDetails: "Ver detalles"
+    },
     nav: {
       projects: "Proyectos",
       skills: "Habilidades",
@@ -229,6 +245,14 @@ export const translations: Record<Lang, Translations> = {
     }
   },
   en: {
+    modal: {
+      overview: "Overview",
+      architecture: "Architecture & Technical Decisions",
+      features: "Key Features & Capabilities",
+      impact: "Impact & Results",
+      close: "Close",
+      viewDetails: "View details"
+    },
     nav: {
       projects: "Projects",
       skills: "Skills",

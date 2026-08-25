@@ -1,6 +1,6 @@
 ---
 import { projects, categories } from "../data/projects";
-import { Github, ExternalLink, Search, Layers, Star, AlertCircle } from "lucide-astro";
+import { Github, ExternalLink, Search, Layers, Star, AlertCircle, X, Check, Sparkles, ArrowRight, BookOpen } from "lucide-astro";
 ---
 
 <section id="proyectos" class="relative py-20 sm:py-28 border-t border-zinc-200 dark:border-zinc-800/80 bg-zinc-50 dark:bg-[#09090b] transition-colors duration-200">
@@ -84,6 +84,7 @@ import { Github, ExternalLink, Search, Layers, Star, AlertCircle } from "lucide-
       {projects.map((project) => (
         <article
           class="project-card group relative flex flex-col overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800/80 bg-white dark:bg-[#111114] transition-all duration-200 hover:-translate-y-1 hover:border-zinc-400 dark:hover:border-zinc-700 shadow-xs hover:shadow-md"
+          data-project-id={project.id}
           data-category={project.category}
           data-featured={project.featured ? "true" : "false"}
           data-tech={project.tech.join(" ").toLowerCase()}
@@ -91,7 +92,10 @@ import { Github, ExternalLink, Search, Layers, Star, AlertCircle } from "lucide-
           data-description={project.description.toLowerCase()}
         >
           <!-- Project Thumbnail Image / Header -->
-          <div class="relative h-44 w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
+          <div
+            class="open-modal-trigger relative h-44 w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 cursor-pointer"
+            data-project-id={project.id}
+          >
             <img
               src={project.image}
               alt={project.title}
@@ -120,7 +124,7 @@ import { Github, ExternalLink, Search, Layers, Star, AlertCircle } from "lucide-
 
             <!-- Title on image bottom -->
             <div class="absolute bottom-3 left-4 right-4 z-10">
-              <h3 class="text-lg font-bold text-white transition-colors">
+              <h3 class="text-lg font-bold text-white transition-colors group-hover:text-blue-300">
                 {project.title}
               </h3>
             </div>
@@ -156,11 +160,19 @@ import { Github, ExternalLink, Search, Layers, Star, AlertCircle } from "lucide-
 
               <!-- Action Links / Footer -->
               <div class="flex items-center justify-between pt-3 border-t border-zinc-200 dark:border-zinc-800 text-xs">
-                <span class="inline-flex items-center gap-1.5 text-zinc-500 text-[11px] truncate max-w-[140px]" title={project.role}>
-                  <Layers class="h-3 w-3 text-zinc-400 shrink-0" />
-                  <span class="truncate">{project.role}</span>
-                </span>
+                
+                <!-- Open Deep-Dive Modal Button -->
+                <button
+                  type="button"
+                  class="open-modal-trigger inline-flex items-center gap-1.5 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white font-medium cursor-pointer text-xs transition-colors"
+                  data-project-id={project.id}
+                  title="Ver detalles técnicos del proyecto"
+                >
+                  <BookOpen class="h-3.5 w-3.5 text-blue-500" />
+                  <span data-i18n="modal.viewDetails">Detalles</span>
+                </button>
 
+                <!-- Repos & Live Links -->
                 <div class="flex items-center gap-2 shrink-0">
                   {project.github && (
                     <a
@@ -216,14 +228,139 @@ import { Github, ExternalLink, Search, Layers, Star, AlertCircle } from "lucide-
     </div>
 
   </div>
+
+  <!-- Deep-Dive Modal Backdrop -->
+  <div
+    id="project-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/70 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-200"
+    role="dialog"
+    aria-modal="true"
+    aria-hidden="true"
+  >
+    <!-- Modal Card Dialog -->
+    <div
+      id="modal-dialog"
+      class="relative w-full max-w-3xl max-h-[90vh] flex flex-col overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-[#111114] shadow-2xl text-zinc-900 dark:text-zinc-100 transform scale-95 transition-all duration-200"
+    >
+      <!-- Modal Header Banner -->
+      <div class="relative h-48 sm:h-56 w-full overflow-hidden bg-zinc-900 shrink-0">
+        <img id="modal-img" src="" alt="" class="h-full w-full object-cover" />
+        <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent"></div>
+
+        <!-- Close Button -->
+        <button
+          id="modal-close-btn"
+          type="button"
+          class="absolute top-4 right-4 z-20 flex h-9 w-9 items-center justify-center rounded-xl bg-black/60 border border-white/20 text-white hover:bg-black/80 transition-colors cursor-pointer"
+          aria-label="Cerrar modal"
+        >
+          <X class="h-4 w-4" />
+        </button>
+
+        <!-- Badge & Title -->
+        <div class="absolute bottom-4 left-6 right-6 z-10 space-y-1">
+          <div class="flex items-center gap-2">
+            <span id="modal-badge" class="inline-flex items-center rounded-md border border-white/20 bg-black/60 px-2 py-0.5 text-[11px] font-mono text-white backdrop-blur-sm"></span>
+            <span id="modal-role" class="text-xs text-zinc-300 font-mono"></span>
+          </div>
+          <h2 id="modal-title" class="text-2xl sm:text-3xl font-bold text-white leading-tight"></h2>
+        </div>
+      </div>
+
+      <!-- Scrollable Modal Content -->
+      <div class="flex-1 overflow-y-auto p-6 sm:p-8 space-y-6 text-sm">
+        
+        <!-- Summary / Overview -->
+        <div>
+          <h4 class="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2 font-bold flex items-center gap-1.5" data-i18n="modal.overview">
+            Descripción General
+          </h4>
+          <p id="modal-summary" class="text-zinc-700 dark:text-zinc-300 leading-relaxed text-sm sm:text-base"></p>
+        </div>
+
+        <!-- Architecture & Technical Decisions -->
+        <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/60 p-4 sm:p-5 space-y-2">
+          <h4 class="text-xs font-mono uppercase tracking-wider text-zinc-900 dark:text-zinc-200 font-bold flex items-center gap-1.5" data-i18n="modal.architecture">
+            Arquitectura & Decisiones Técnicas
+          </h4>
+          <p id="modal-architecture" class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed"></p>
+        </div>
+
+        <!-- Key Features List -->
+        <div>
+          <h4 class="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-3 font-bold flex items-center gap-1.5" data-i18n="modal.features">
+            Funcionalidades Clave
+          </h4>
+          <ul id="modal-features-list" class="space-y-2 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300"></ul>
+        </div>
+
+        <!-- Real-world Impact / Outcome -->
+        <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 space-y-1.5">
+          <h4 class="text-xs font-mono uppercase tracking-wider text-emerald-700 dark:text-emerald-300 font-bold flex items-center gap-1.5" data-i18n="modal.impact">
+            Impacto & Resultados
+          </h4>
+          <p id="modal-impact" class="text-xs sm:text-sm text-zinc-800 dark:text-zinc-200 leading-relaxed"></p>
+        </div>
+
+        <!-- Tech Stack Pills in Modal -->
+        <div>
+          <h4 class="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2 font-bold">
+            Stack Tecnológico
+          </h4>
+          <div id="modal-tech-pills" class="flex flex-wrap gap-1.5"></div>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer with Action Buttons -->
+      <div class="p-4 sm:p-6 border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50/90 dark:bg-zinc-900/80 flex items-center justify-between gap-3 shrink-0">
+        <button
+          id="modal-close-footer-btn"
+          type="button"
+          class="rounded-xl border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 px-4 py-2 text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors cursor-pointer"
+          data-i18n="modal.close"
+        >
+          Cerrar
+        </button>
+
+        <div class="flex items-center gap-2">
+          <a
+            id="modal-github-link"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 px-3.5 py-2 text-xs font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+          >
+            <Github class="h-3.5 w-3.5" />
+            <span>GitHub Repo</span>
+          </a>
+
+          <a
+            id="modal-demo-link"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 rounded-xl bg-zinc-900 dark:bg-white px-4 py-2 text-xs font-semibold text-white dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors shadow-xs"
+          >
+            <ExternalLink class="h-3.5 w-3.5" />
+            <span>Ver Sitio en Vivo</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </section>
 
 <script>
+  import { projects } from "../data/projects";
   import { translations, type Lang } from "../data/i18n";
 
   let activeCategory = "all";
   let searchQuery = "";
   let currentLang: Lang = (document.documentElement.getAttribute("lang") as Lang) || "es";
+  let activeProjectId: string | null = null;
 
   const searchInput = document.getElementById("project-search") as HTMLInputElement;
   const clearSearchBtn = document.getElementById("clear-search-btn") as HTMLButtonElement;
@@ -234,6 +371,131 @@ import { Github, ExternalLink, Search, Layers, Star, AlertCircle } from "lucide-
   const emptyResetBtn = document.getElementById("empty-reset-btn") as HTMLButtonElement;
   const noResults = document.getElementById("no-results") as HTMLElement;
   const totalCount = projectCards.length;
+
+  // Modal elements
+  const modalBackdrop = document.getElementById("project-modal");
+  const modalDialog = document.getElementById("modal-dialog");
+  const modalImg = document.getElementById("modal-img") as HTMLImageElement;
+  const modalTitle = document.getElementById("modal-title");
+  const modalBadge = document.getElementById("modal-badge");
+  const modalRole = document.getElementById("modal-role");
+  const modalSummary = document.getElementById("modal-summary");
+  const modalArchitecture = document.getElementById("modal-architecture");
+  const modalFeaturesList = document.getElementById("modal-features-list");
+  const modalImpact = document.getElementById("modal-impact");
+  const modalTechPills = document.getElementById("modal-tech-pills");
+  const modalGithubLink = document.getElementById("modal-github-link") as HTMLAnchorElement;
+  const modalDemoLink = document.getElementById("modal-demo-link") as HTMLAnchorElement;
+  const modalCloseBtn = document.getElementById("modal-close-btn");
+  const modalCloseFooterBtn = document.getElementById("modal-close-footer-btn");
+
+  function openProjectModal(id: string) {
+    const project = projects.find((p) => p.id === id);
+    if (!project) return;
+    activeProjectId = id;
+
+    const details = project.details ? project.details[currentLang] : null;
+
+    if (modalImg) {
+      modalImg.src = project.image;
+      modalImg.alt = project.title;
+    }
+    if (modalTitle) modalTitle.textContent = project.title;
+    if (modalBadge) modalBadge.textContent = project.badge;
+    if (modalRole) modalRole.textContent = project.role;
+
+    if (modalSummary) {
+      modalSummary.textContent = details ? details.summary : project.description;
+    }
+    if (modalArchitecture) {
+      modalArchitecture.textContent = details ? details.architecture : project.challenge;
+    }
+
+    if (modalFeaturesList) {
+      modalFeaturesList.innerHTML = "";
+      const features = details?.features || [project.description, project.challenge];
+      features.forEach((feat) => {
+        const li = document.createElement("li");
+        li.className = "flex items-start gap-2";
+        li.innerHTML = `<span class="text-emerald-500 font-bold shrink-0 mt-0.5">✓</span><span>${feat}</span>`;
+        modalFeaturesList.appendChild(li);
+      });
+    }
+
+    if (modalImpact) {
+      modalImpact.textContent = details ? details.impact : "Diseñado con estándares de alta ingeniería y código limpio.";
+    }
+
+    if (modalTechPills) {
+      modalTechPills.innerHTML = "";
+      project.tech.forEach((t) => {
+        const span = document.createElement("span");
+        span.className = "rounded-md border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 px-2.5 py-1 text-xs font-mono text-zinc-700 dark:text-zinc-300";
+        span.textContent = t;
+        modalTechPills.appendChild(span);
+      });
+    }
+
+    if (modalGithubLink) {
+      if (project.github) {
+        modalGithubLink.href = project.github;
+        modalGithubLink.classList.remove("hidden");
+      } else {
+        modalGithubLink.classList.add("hidden");
+      }
+    }
+
+    if (modalDemoLink) {
+      if (project.demo) {
+        modalDemoLink.href = project.demo;
+        modalDemoLink.classList.remove("hidden");
+      } else {
+        modalDemoLink.classList.add("hidden");
+      }
+    }
+
+    // Show modal with animation
+    if (modalBackdrop && modalDialog) {
+      modalBackdrop.classList.remove("opacity-0", "pointer-events-none");
+      modalBackdrop.setAttribute("aria-hidden", "false");
+      modalDialog.classList.remove("scale-95");
+      modalDialog.classList.add("scale-100");
+      document.body.style.overflow = "hidden";
+    }
+  }
+
+  function closeProjectModal() {
+    activeProjectId = null;
+    if (modalBackdrop && modalDialog) {
+      modalBackdrop.classList.add("opacity-0", "pointer-events-none");
+      modalBackdrop.setAttribute("aria-hidden", "true");
+      modalDialog.classList.remove("scale-100");
+      modalDialog.classList.add("scale-95");
+      document.body.style.overflow = "";
+    }
+  }
+
+  // Attach modal trigger listeners
+  document.querySelectorAll(".open-modal-trigger").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const id = el.getAttribute("data-project-id");
+      if (id) openProjectModal(id);
+    });
+  });
+
+  modalCloseBtn?.addEventListener("click", closeProjectModal);
+  modalCloseFooterBtn?.addEventListener("click", closeProjectModal);
+
+  modalBackdrop?.addEventListener("click", (e) => {
+    if (e.target === modalBackdrop) {
+      closeProjectModal();
+    }
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeProjectModal();
+  });
 
   function updateCategoryLabels(lang: Lang) {
     const t = translations[lang].projects.categories;
@@ -248,6 +510,9 @@ import { Github, ExternalLink, Search, Layers, Star, AlertCircle } from "lucide-
   window.addEventListener("portfolio-lang-change", (e: any) => {
     currentLang = e.detail.lang;
     updateCategoryLabels(currentLang);
+    if (activeProjectId) {
+      openProjectModal(activeProjectId);
+    }
     applyFilters();
   });
 
