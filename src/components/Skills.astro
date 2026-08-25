@@ -1,6 +1,6 @@
 ---
 import { skillsData } from "../data/skills";
-import { Layout, Database, Cpu, Terminal, Sparkles, CheckCircle2, Wrench } from "lucide-astro";
+import { Layout, Database, Cpu, Terminal, CheckCircle2 } from "lucide-astro";
 
 const iconMap = {
   Layout: Layout,
@@ -10,41 +10,38 @@ const iconMap = {
 };
 ---
 
-<section id="habilidades" class="relative py-24 sm:py-32 border-t border-white/10 bg-[#030712]/70">
+<section id="habilidades" class="relative py-20 sm:py-28 border-t border-zinc-800/80 bg-[#09090b]">
   <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     
     <!-- Section Header -->
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <div class="inline-flex items-center gap-2 rounded-lg border border-teal-500/30 bg-teal-500/10 px-3 py-1 text-xs font-semibold text-teal-400 mb-3">
-        <Wrench class="h-3.5 w-3.5" />
-        <span>Stack & Conocimientos</span>
-      </div>
-      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-        Tecnologías & Especialidades
+    <div class="max-w-2xl mb-12">
+      <p class="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">
+        Stack & Herramientas
+      </p>
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+        Tecnologías Principales
       </h2>
-      <p class="mt-4 text-base sm:text-lg text-gray-400">
-        Herramientas, lenguajes y frameworks que empleo para diseñar arquitecturas escalables, interfaces fluidas y software confiable.
+      <p class="mt-2 text-sm sm:text-base text-zinc-400">
+        Lenguajes, frameworks y entornos con los que desarrollo software en producción.
       </p>
     </div>
 
     <!-- Skills Category Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
       {skillsData.map((cat) => {
         const IconComponent = iconMap[cat.iconName as keyof typeof iconMap] || Terminal;
         return (
-          <div class="flex flex-col justify-between rounded-2xl border border-white/10 bg-slate-900/50 p-6 backdrop-blur-md transition-all duration-300 hover:border-blue-500/40 hover:bg-slate-900/80">
+          <div class="flex flex-col justify-between rounded-2xl border border-zinc-800 bg-[#111114] p-5 transition-all hover:border-zinc-700">
             <div>
               <!-- Header -->
-              <div class="flex items-center gap-3 mb-4">
-                <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600/20 border border-blue-500/30 text-blue-400">
-                  <IconComponent class="h-5 w-5" />
+              <div class="flex items-center gap-3 mb-3">
+                <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-zinc-800 border border-zinc-700 text-zinc-200">
+                  <IconComponent class="h-4 w-4" />
                 </div>
-                <div>
-                  <h3 class="text-lg font-bold text-white">{cat.category}</h3>
-                </div>
+                <h3 class="text-sm font-bold text-white">{cat.category}</h3>
               </div>
 
-              <p class="text-xs text-gray-400 mb-5 leading-relaxed">
+              <p class="text-xs text-zinc-400 mb-4 leading-relaxed">
                 {cat.description}
               </p>
 
@@ -52,13 +49,12 @@ const iconMap = {
               <div class="flex flex-wrap gap-1.5">
                 {cat.items.map((item) => (
                   <span
-                    class={`inline-flex items-center gap-1 rounded-lg px-2.5 py-1 text-xs font-medium ${
+                    class={`inline-flex items-center rounded-md px-2 py-0.5 text-[11px] font-mono ${
                       item.highlight
-                        ? "border border-blue-500/40 bg-blue-500/15 text-blue-200 font-semibold"
-                        : "border border-white/10 bg-white/5 text-gray-300"
+                        ? "border border-zinc-700 bg-zinc-800 text-zinc-100 font-medium"
+                        : "border border-zinc-800/80 bg-zinc-900 text-zinc-400"
                     }`}
                   >
-                    {item.highlight && <Sparkles class="h-2.5 w-2.5 text-blue-400" />}
                     {item.name}
                   </span>
                 ))}
@@ -66,43 +62,13 @@ const iconMap = {
             </div>
 
             <!-- Footer note -->
-            <div class="pt-6 mt-6 border-t border-white/5 flex items-center gap-1.5 text-[11px] text-gray-500">
-              <CheckCircle2 class="h-3.5 w-3.5 text-emerald-400" />
-              <span>Producción & Proyectos reales</span>
+            <div class="pt-4 mt-4 border-t border-zinc-800/80 flex items-center gap-1.5 text-[10px] font-mono text-zinc-400">
+              <CheckCircle2 class="h-3 w-3 text-emerald-400" />
+              <span>Producción & Proyectos</span>
             </div>
           </div>
         );
       })}
-    </div>
-
-    <!-- Engineering Principles Cards -->
-    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-        <h4 class="text-base font-bold text-white mb-2 flex items-center gap-2">
-          <span class="h-2 w-2 rounded-full bg-blue-400"></span> Arquitectura Limpia
-        </h4>
-        <p class="text-xs text-gray-400 leading-relaxed">
-          Enfoque en bajo acoplamiento, alta cohesión y código mantenible guiado por principios SOLID y patrones de diseño.
-        </p>
-      </div>
-
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-        <h4 class="text-base font-bold text-white mb-2 flex items-center gap-2">
-          <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Rendimiento & Sistemas
-        </h4>
-        <p class="text-xs text-gray-400 leading-relaxed">
-          Comprensión profunda del hardware, gestión de memoria, concurrencia, networking y optimización de carga web.
-        </p>
-      </div>
-
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-        <h4 class="text-base font-bold text-white mb-2 flex items-center gap-2">
-          <span class="h-2 w-2 rounded-full bg-purple-400"></span> Orientación a Producto
-        </h4>
-        <p class="text-xs text-gray-400 leading-relaxed">
-          De la concepción a producción: diseño de experiencia de usuario, SEO, despliegue continuo y entrega de valor real.
-        </p>
-      </div>
     </div>
 
   </div>

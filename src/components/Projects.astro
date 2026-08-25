@@ -1,26 +1,22 @@
 ---
 import { projects, categories } from "../data/projects";
-import { Github, ExternalLink, Search, Filter, Layers, Star, Sparkles, FolderGit2, AlertCircle } from "lucide-astro";
+import { Github, ExternalLink, Search, Layers, Star, Sparkles, FolderGit2, AlertCircle } from "lucide-astro";
 ---
 
-<section id="proyectos" class="relative py-24 sm:py-32 border-t border-white/10 bg-[#030712]">
-  <!-- Subtle Background Grid -->
-  <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none"></div>
-
+<section id="proyectos" class="relative py-20 sm:py-28 border-t border-zinc-800/80 bg-[#09090b]">
   <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     
     <!-- Section Header -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
       <div>
-        <div class="inline-flex items-center gap-2 rounded-lg border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-semibold text-blue-400 mb-3">
-          <FolderGit2 class="h-3.5 w-3.5" />
-          <span>Proyectos & Código Abierto</span>
-        </div>
-        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-          Mis Proyectos
+        <p class="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">
+          Portfolio de Software
+        </p>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+          Proyectos & Aplicaciones
         </h2>
-        <p class="mt-3 text-base sm:text-lg text-gray-400 max-w-2xl">
-          Explora proyectos destacados, aplicaciones nativas de macOS, soluciones de satélites/AI, plataformas web y herramientas CLI.
+        <p class="mt-2 text-sm sm:text-base text-zinc-400 max-w-2xl">
+          Soluciones de agricultura satelital con Machine Learning, sitios web en producción, aplicaciones de sistemas en macOS y proyectos de código abierto.
         </p>
       </div>
 
@@ -29,46 +25,46 @@ import { Github, ExternalLink, Search, Filter, Layers, Star, Sparkles, FolderGit
         href="https://github.com/JulianAlconcher?tab=repositories"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 text-xs font-semibold text-gray-200 hover:border-white/30 hover:bg-white/10 hover:text-white transition-all self-start md:self-auto"
+        class="inline-flex items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-900/60 px-4 py-2 text-xs font-medium text-zinc-300 hover:border-zinc-700 hover:bg-zinc-800 hover:text-white transition-all self-start md:self-auto"
       >
-        <Github class="h-4 w-4" />
-        <span>Ver en GitHub ({projects.length}+ repos)</span>
-        <ExternalLink class="h-3.5 w-3.5 text-gray-400" />
+        <Github class="h-3.5 w-3.5" />
+        <span>GitHub ({projects.length}+ repos)</span>
+        <ExternalLink class="h-3 w-3 text-zinc-500" />
       </a>
     </div>
 
     <!-- Interactive Filter & Search Bar -->
-    <div class="mb-10 space-y-5">
+    <div class="mb-10 space-y-4">
       <!-- Search Input -->
       <div class="relative max-w-md">
-        <Search class="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+        <Search class="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-500" />
         <input
           id="project-search"
           type="text"
-          placeholder="Buscar por tecnología, nombre o concepto (ej: Swift, NDVI, React)..."
-          class="w-full rounded-2xl border border-white/10 bg-white/5 pl-11 pr-4 py-3 text-sm text-gray-100 placeholder-gray-500 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all"
+          placeholder="Buscar por tecnología o nombre (ej: React, Swift, NDVI)..."
+          class="w-full rounded-xl border border-zinc-800 bg-zinc-900/80 pl-10 pr-8 py-2.5 text-xs sm:text-sm text-zinc-100 placeholder-zinc-500 outline-none focus:border-zinc-600 focus:bg-zinc-900 transition-colors font-sans"
         />
         <button
           id="clear-search-btn"
           type="button"
-          class="hidden absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-gray-400 hover:text-white"
-          title="Limpiar búsqueda"
+          class="hidden absolute right-3 top-1/2 -translate-y-1/2 rounded text-xs text-zinc-500 hover:text-white"
+          title="Limpiar"
         >
           ✕
         </button>
       </div>
 
-      <!-- Category Filter Pills -->
-      <div class="flex flex-wrap items-center gap-2">
+      <!-- Category Filter Pills (Minimalist Segmented Control) -->
+      <div class="flex flex-wrap items-center gap-1.5 p-1 rounded-xl bg-zinc-900/80 border border-zinc-800/80 w-fit">
         {categories.map((cat) => (
           <button
             type="button"
-            class="filter-pill rounded-xl border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs font-semibold text-gray-300 hover:border-white/20 hover:bg-white/10 hover:text-white transition-all cursor-pointer flex items-center gap-2 data-[active=true]:border-blue-500 data-[active=true]:bg-blue-600 data-[active=true]:text-white data-[active=true]:shadow-lg data-[active=true]:shadow-blue-500/20"
+            class="filter-pill rounded-lg px-3 py-1.5 text-xs font-medium text-zinc-400 hover:text-zinc-200 transition-all cursor-pointer flex items-center gap-1.5 data-[active=true]:bg-zinc-800 data-[active=true]:text-white data-[active=true]:shadow-sm"
             data-category={cat.id}
             data-active={cat.id === "all" ? "true" : "false"}
           >
             <span>{cat.label}</span>
-            <span class="rounded-full bg-white/10 px-1.5 py-0.2 text-[10px] text-gray-300 data-[active=true]:text-white">
+            <span class="text-[10px] text-zinc-500 font-mono data-[active=true]:text-zinc-400">
               {cat.count}
             </span>
           </button>
@@ -76,42 +72,37 @@ import { Github, ExternalLink, Search, Filter, Layers, Star, Sparkles, FolderGit
       </div>
 
       <!-- Live Counter -->
-      <div class="flex items-center justify-between text-xs text-gray-400 pt-1">
+      <div class="flex items-center justify-between text-xs text-zinc-500 pt-0.5 font-mono">
         <span id="results-count">Mostrando {projects.length} de {projects.length} proyectos</span>
-        <button id="reset-filters" class="hidden text-blue-400 hover:underline">Restablecer filtros</button>
+        <button id="reset-filters" class="hidden text-zinc-400 hover:text-white underline">Restablecer</button>
       </div>
     </div>
 
     <!-- Projects Grid -->
-    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {projects.map((project) => (
         <article
-          class="project-card group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/10"
+          class="project-card group relative flex flex-col overflow-hidden rounded-2xl border border-zinc-800/80 bg-[#111114] transition-all duration-200 hover:-translate-y-1 hover:border-zinc-700 hover:shadow-xl"
           data-category={project.category}
           data-featured={project.featured ? "true" : "false"}
           data-tech={project.tech.join(" ").toLowerCase()}
           data-title={project.title.toLowerCase()}
           data-description={project.description.toLowerCase()}
         >
-          <!-- Featured Glow Bar -->
-          {project.featured && (
-            <div class="absolute top-0 inset-x-0 h-1 bg-linear-to-r from-blue-500 via-indigo-400 to-teal-400 z-20"></div>
-          )}
-
           <!-- Project Thumbnail Image / Header -->
-          <div class="relative h-48 w-full overflow-hidden bg-slate-800/80 border-b border-white/10">
+          <div class="relative h-44 w-full overflow-hidden bg-zinc-900 border-b border-zinc-800">
             <img
               src={project.image}
               alt={project.title}
               loading="lazy"
               class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div class="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <div class="absolute inset-0 bg-linear-to-t from-[#111114] via-[#111114]/30 to-transparent"></div>
             
             <!-- Category Badge Pill -->
             <div class="absolute top-3 left-3 z-10">
-              <span class="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-black/60 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur-md shadow-sm">
-                {project.featured && <Sparkles class="h-3 w-3 text-amber-400" />}
+              <span class="inline-flex items-center gap-1.5 rounded-lg border border-zinc-700/60 bg-zinc-900/90 px-2.5 py-1 text-[11px] font-medium text-zinc-200 backdrop-blur-md">
+                {project.featured && <span class="h-1.5 w-1.5 rounded-full bg-blue-400"></span>}
                 {project.badge}
               </span>
             </div>
@@ -119,53 +110,53 @@ import { Github, ExternalLink, Search, Filter, Layers, Star, Sparkles, FolderGit
             <!-- Stars count if available -->
             {project.stars > 0 && (
               <div class="absolute top-3 right-3 z-10">
-                <span class="inline-flex items-center gap-1 rounded-lg border border-amber-500/30 bg-amber-500/20 px-2 py-0.5 text-[11px] font-semibold text-amber-300 backdrop-blur-md">
+                <span class="inline-flex items-center gap-1 rounded-lg border border-amber-500/30 bg-amber-500/15 px-2 py-0.5 text-[11px] font-medium text-amber-300 backdrop-blur-md">
                   <Star class="h-3 w-3 fill-amber-400" />
                   {project.stars}
                 </span>
               </div>
             )}
 
-            <!-- Bottom Title overlay on image -->
+            <!-- Title on image bottom -->
             <div class="absolute bottom-3 left-4 right-4 z-10">
-              <h3 class="text-xl font-bold text-white group-hover:text-blue-300 transition-colors">
+              <h3 class="text-lg font-bold text-white group-hover:text-zinc-200 transition-colors">
                 {project.title}
               </h3>
             </div>
           </div>
 
           <!-- Project Card Content -->
-          <div class="flex flex-1 flex-col p-5 sm:p-6 justify-between">
+          <div class="flex flex-1 flex-col p-5 justify-between">
             
             <!-- Top Section: Description & Challenge -->
-            <div class="space-y-3.5 flex flex-col">
+            <div class="space-y-3 flex flex-col">
               <!-- Description with uniform height -->
-              <p class="text-sm text-gray-300 leading-relaxed line-clamp-3 min-h-[4.25rem]">
+              <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed line-clamp-3 min-h-[4rem]">
                 {project.description}
               </p>
 
               <!-- Challenge / Note Box with uniform fixed height & alignment -->
-              <div class="rounded-xl border border-white/5 bg-white/5 p-3 text-xs text-gray-400 min-h-[5rem] flex flex-col justify-center">
-                <span class="font-semibold text-gray-200 block mb-0.5 text-[11px] uppercase tracking-wider">Desafío técnico</span>
-                <span class="text-gray-300 line-clamp-2 leading-relaxed">{project.challenge}</span>
+              <div class="rounded-xl border border-zinc-800 bg-zinc-900/50 p-3 text-xs min-h-[4.75rem] flex flex-col justify-center">
+                <span class="font-mono text-[10px] uppercase text-zinc-500 block mb-0.5 font-semibold">Desafío</span>
+                <span class="text-zinc-300 line-clamp-2 leading-relaxed">{project.challenge}</span>
               </div>
             </div>
 
             <!-- Bottom Section: Tech Badges & Links pinned to bottom -->
-            <div class="mt-4 pt-1 space-y-4">
+            <div class="mt-4 pt-1 space-y-3.5">
               <!-- Tech Badges with uniform height -->
-              <div class="flex flex-wrap content-start gap-1.5 min-h-[4rem] max-h-[4.5rem] overflow-hidden">
+              <div class="flex flex-wrap content-start gap-1.5 min-h-[3.75rem] max-h-[4.25rem] overflow-hidden">
                 {project.tech.map((t) => (
-                  <span class="rounded-md border border-white/10 bg-white/5 px-2 py-0.5 text-[11px] font-mono text-gray-300">
+                  <span class="rounded-md border border-zinc-800 bg-zinc-900/80 px-2 py-0.5 text-[11px] font-mono text-zinc-400">
                     {t}
                   </span>
                 ))}
               </div>
 
               <!-- Action Links / Footer -->
-              <div class="flex items-center justify-between pt-3 border-t border-white/10 text-xs">
-                <span class="inline-flex items-center gap-1 text-gray-400 font-medium truncate max-w-[140px]" title={project.role}>
-                  <Layers class="h-3.5 w-3.5 text-blue-400 shrink-0" />
+              <div class="flex items-center justify-between pt-3 border-t border-zinc-800 text-xs">
+                <span class="inline-flex items-center gap-1.5 text-zinc-500 text-[11px] truncate max-w-[140px]" title={project.role}>
+                  <Layers class="h-3 w-3 text-zinc-400 shrink-0" />
                   <span class="truncate">{project.role}</span>
                 </span>
 
@@ -175,8 +166,8 @@ import { Github, ExternalLink, Search, Filter, Layers, Star, Sparkles, FolderGit
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/10 px-3 py-1.5 font-semibold text-white hover:bg-white/20 transition-colors"
-                      title="Ver Código en GitHub"
+                      class="inline-flex items-center gap-1.5 rounded-lg border border-zinc-700/80 bg-zinc-800/80 px-2.5 py-1 text-xs font-medium text-zinc-200 hover:bg-zinc-700 hover:text-white transition-colors"
+                      title="Ver Código"
                     >
                       <Github class="h-3.5 w-3.5" />
                       <span>Repo</span>
@@ -188,10 +179,10 @@ import { Github, ExternalLink, Search, Filter, Layers, Star, Sparkles, FolderGit
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="inline-flex items-center gap-1.5 rounded-lg bg-blue-600 px-3 py-1.5 font-semibold text-white hover:bg-blue-500 shadow-md shadow-blue-600/20 transition-all"
+                      class="inline-flex items-center gap-1.5 rounded-lg bg-white px-2.5 py-1 text-xs font-semibold text-zinc-900 hover:bg-zinc-200 transition-colors"
                       title="Ver Sitio en Vivo"
                     >
-                      <ExternalLink class="h-3.5 w-3.5" />
+                      <ExternalLink class="h-3 w-3" />
                       <span>Live</span>
                     </a>
                   )}
@@ -206,44 +197,20 @@ import { Github, ExternalLink, Search, Filter, Layers, Star, Sparkles, FolderGit
 
     <!-- Empty Results State -->
     <div id="no-results" class="hidden text-center py-16 px-4">
-      <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-gray-400 mb-4">
-        <AlertCircle class="h-8 w-8 text-amber-400" />
+      <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-500 mb-3">
+        <AlertCircle class="h-6 w-6" />
       </div>
-      <h3 class="text-lg font-bold text-white mb-1">No se encontraron proyectos</h3>
-      <p class="text-sm text-gray-400 max-w-sm mx-auto mb-6">
-        No hay proyectos que coincidan con los filtros seleccionados. Intenta con otros términos o categoría.
+      <h3 class="text-sm font-semibold text-white mb-1">No se encontraron proyectos</h3>
+      <p class="text-xs text-zinc-500 max-w-sm mx-auto mb-4">
+        Prueba buscando con otro término o seleccionando "Todos".
       </p>
       <button
         id="empty-reset-btn"
         type="button"
-        class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2 text-xs font-semibold text-white hover:bg-blue-500 transition-colors"
+        class="inline-flex items-center gap-2 rounded-lg bg-zinc-800 px-3.5 py-1.5 text-xs font-medium text-white hover:bg-zinc-700 transition-colors"
       >
-        Limpiar Filtros y Búsqueda
+        Limpiar Filtros
       </button>
-    </div>
-
-    <!-- GitHub Profile Banner -->
-    <div class="mt-16 rounded-3xl border border-white/10 bg-linear-to-r from-blue-950/40 via-indigo-950/30 to-slate-900/60 p-8 sm:p-10 text-center relative overflow-hidden backdrop-blur-md">
-      <div class="relative z-10 max-w-2xl mx-auto space-y-4">
-        <h3 class="text-2xl sm:text-3xl font-extrabold text-white">
-          ¿Quieres ver más código y contribuciones?
-        </h3>
-        <p class="text-sm sm:text-base text-gray-300">
-          Encuentra scripts, configuraciones, asignaciones universitarias y repositorios experimentales en mi perfil de GitHub.
-        </p>
-        <div class="pt-2">
-          <a
-            href="https://github.com/JulianAlconcher"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2.5 rounded-xl bg-white px-6 py-3 text-sm font-bold text-slate-900 shadow-xl hover:bg-gray-100 transition-all hover:scale-105"
-          >
-            <Github class="h-5 w-5" />
-            <span>Explorar @JulianAlconcher en GitHub</span>
-            <ExternalLink class="h-4 w-4 text-slate-600" />
-          </a>
-        </div>
-      </div>
     </div>
 
   </div>
@@ -274,7 +241,6 @@ import { Github, ExternalLink, Search, Filter, Layers, Star, Sparkles, FolderGit
       const desc = card.getAttribute("data-description") || "";
       const tech = card.getAttribute("data-tech") || "";
 
-      // Category matching
       let categoryMatch = false;
       if (activeCategory === "all") {
         categoryMatch = true;
@@ -286,7 +252,6 @@ import { Github, ExternalLink, Search, Filter, Layers, Star, Sparkles, FolderGit
         categoryMatch = cat === activeCategory;
       }
 
-      // Search matching
       let searchMatch = true;
       if (q) {
         searchMatch = title.includes(q) || desc.includes(q) || tech.includes(q);
@@ -300,19 +265,16 @@ import { Github, ExternalLink, Search, Filter, Layers, Star, Sparkles, FolderGit
       }
     });
 
-    // Update results label
     if (resultsCount) {
       resultsCount.textContent = `Mostrando ${visibleCount} de ${totalCount} proyectos`;
     }
 
-    // Toggle no results state
     if (visibleCount === 0) {
       noResults?.classList.remove("hidden");
     } else {
       noResults?.classList.add("hidden");
     }
 
-    // Toggle reset filters button
     const isFiltered = activeCategory !== "all" || q.length > 0;
     if (resetFiltersBtn) {
       if (isFiltered) {
@@ -323,7 +285,6 @@ import { Github, ExternalLink, Search, Filter, Layers, Star, Sparkles, FolderGit
     }
   }
 
-  // Filter click handler
   filterPills.forEach((pill) => {
     pill.addEventListener("click", () => {
       filterPills.forEach((p) => {
@@ -335,7 +296,6 @@ import { Github, ExternalLink, Search, Filter, Layers, Star, Sparkles, FolderGit
     });
   });
 
-  // Search input handler
   searchInput?.addEventListener("input", (e) => {
     searchQuery = (e.target as HTMLInputElement).value;
     if (searchQuery) {

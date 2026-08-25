@@ -1,167 +1,150 @@
 ---
-import { ArrowRight, Mail, Github, Linkedin, Terminal, Sparkles, Code2, Layers, Cpu, Download } from "lucide-astro";
+import { ArrowRight, Mail, Github, Linkedin, Terminal, Download, FileText, ExternalLink } from "lucide-astro";
 ---
 
-<section id="home" class="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-28">
+<section id="home" class="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-24">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
-      <!-- Left Column: Bio & Hero Info -->
+      <!-- Left Column: Bio & Info -->
       <div class="lg:col-span-7 flex flex-col items-start text-left">
-        <!-- Status Badge with Profile Avatar -->
-        <div class="flex items-center gap-3.5 mb-6">
-          <div class="relative">
-            <img
-              src="/profile.png"
-              alt="Julián Alconcher"
-              class="h-12 w-12 rounded-2xl object-cover border-2 border-blue-500/40 shadow-lg shadow-blue-500/20 bg-slate-800"
-            />
-            <span class="absolute -bottom-0.5 -right-0.5 flex h-3.5 w-3.5">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500 border-2 border-[#030712]"></span>
-            </span>
-          </div>
-          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-400 backdrop-blur-md">
-            Disponible para nuevos proyectos & desafíos
-          </div>
+        
+        <!-- Location / Status Tag -->
+        <div class="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-zinc-900/80 px-3.5 py-1.5 text-xs text-zinc-300 mb-6 backdrop-blur-sm">
+          <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Ingeniero en Sistemas de Información · UNS</span>
         </div>
 
         <!-- Main Title -->
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08] mb-6">
-          Creando software <br class="hidden sm:inline" />
-          <span class="bg-linear-to-r from-blue-400 via-indigo-300 to-teal-300 bg-clip-text text-transparent">
-            escalable y de alto impacto
-          </span>
+        <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-white leading-[1.1] mb-5">
+          Julián Alconcher
         </h1>
 
-        <!-- Bio Paragraph -->
-        <p class="text-lg sm:text-xl text-gray-300 max-w-2xl font-normal leading-relaxed mb-8">
-          ¡Hola! Soy <strong class="text-white font-semibold">Julián Alconcher</strong>, Software Engineer apasionado por la arquitectura limpia, sistemas nativos, plataformas web modernas y aplicaciones científicas/AI.
+        <!-- Subtitle & Bio -->
+        <p class="text-lg sm:text-xl text-zinc-300 max-w-2xl font-normal leading-relaxed mb-8">
+          Desarrollador <span class="text-white font-medium">Full-Stack & Systems</span> enfocado en arquitectura de software, aplicaciones web modernas (React, Next.js, Astro), software nativo para macOS en Swift y análisis de datos satelitales / AI.
         </p>
 
-        <!-- CTA Action Buttons -->
-        <div class="flex flex-wrap items-center gap-3.5 mb-10">
+        <!-- Action Buttons (Clean & Solid) -->
+        <div class="flex flex-wrap items-center gap-3 mb-10">
           <a
             href="#proyectos"
-            class="group inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 sm:px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 hover:bg-blue-500 hover:shadow-blue-500/40 transition-all duration-200"
+            class="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-zinc-900 hover:bg-zinc-200 transition-colors"
           >
-            <span>Explorar Proyectos</span>
-            <ArrowRight class="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            <span>Ver Proyectos</span>
+            <ArrowRight class="h-4 w-4 text-zinc-700" />
           </a>
 
           <a
             href="/CV_Julian_Alconcher.pdf"
             download="CV_Julian_Alconcher.pdf"
-            class="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 sm:px-5 py-3 text-sm font-semibold text-gray-200 hover:bg-white/10 hover:text-white transition-all backdrop-blur-sm"
+            class="inline-flex items-center gap-2 rounded-xl border border-zinc-700 bg-zinc-900/90 px-4 py-2.5 text-sm font-semibold text-zinc-200 hover:bg-zinc-800 hover:text-white transition-colors"
           >
-            <Download class="h-4 w-4 text-emerald-400" />
+            <Download class="h-4 w-4 text-zinc-400" />
             <span>Descargar CV</span>
           </a>
 
           <a
             href="#contacto"
-            class="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 sm:px-5 py-3 text-sm font-semibold text-gray-200 hover:bg-white/10 hover:text-white transition-all backdrop-blur-sm"
+            class="inline-flex items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-900/50 px-4 py-2.5 text-sm font-semibold text-zinc-300 hover:bg-zinc-800 hover:text-white transition-colors"
           >
-            <Mail class="h-4 w-4 text-blue-400" />
+            <Mail class="h-4 w-4 text-zinc-400" />
             <span>Contacto</span>
           </a>
 
-          <a
-            href="https://github.com/JulianAlconcher"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center h-11 w-11 rounded-xl border border-white/15 bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white transition-all"
-            aria-label="Perfil de GitHub"
-          >
-            <Github class="h-4.5 w-4.5" />
-          </a>
+          <div class="flex items-center gap-1.5 pl-1">
+            <a
+              href="https://github.com/JulianAlconcher"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center h-10 w-10 rounded-xl border border-zinc-800 bg-zinc-900/60 text-zinc-400 hover:bg-zinc-800 hover:text-white transition-colors"
+              aria-label="GitHub"
+            >
+              <Github class="h-4 w-4" />
+            </a>
 
-          <a
-            href="https://www.linkedin.com/in/julian-alconcher"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center h-11 w-11 rounded-xl border border-white/15 bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white transition-all"
-            aria-label="Perfil de LinkedIn"
-          >
-            <Linkedin class="h-4.5 w-4.5" />
-          </a>
+            <a
+              href="https://www.linkedin.com/in/julian-alconcher"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center h-10 w-10 rounded-xl border border-zinc-800 bg-zinc-900/60 text-zinc-400 hover:bg-zinc-800 hover:text-white transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin class="h-4 w-4" />
+            </a>
+          </div>
         </div>
 
-        <!-- Highlights / Stats Strip -->
-        <div class="grid grid-cols-3 gap-6 pt-6 border-t border-white/10 w-full max-w-xl">
+        <!-- Stats Bar (Understated & Crisp) -->
+        <div class="grid grid-cols-3 gap-6 pt-6 border-t border-zinc-800/80 w-full max-w-lg text-left">
           <div>
-            <p class="text-2xl sm:text-3xl font-extrabold text-white">16+</p>
-            <p class="text-xs sm:text-sm text-gray-400 font-medium mt-0.5">Repositorios & Apps</p>
+            <p class="text-xl font-bold text-white font-mono">16+</p>
+            <p class="text-xs text-zinc-400 mt-0.5">Repositorios</p>
           </div>
           <div>
-            <p class="text-2xl sm:text-3xl font-extrabold text-blue-400">Full Stack</p>
-            <p class="text-xs sm:text-sm text-gray-400 font-medium mt-0.5">& macOS / Systems</p>
+            <p class="text-xl font-bold text-white font-mono">UNS</p>
+            <p class="text-xs text-zinc-400 mt-0.5">Ing. en Sistemas</p>
           </div>
           <div>
-            <p class="text-2xl sm:text-3xl font-extrabold text-emerald-400">UNS</p>
-            <p class="text-xs sm:text-sm text-gray-400 font-medium mt-0.5">Ingeniería / CS</p>
+            <p class="text-xl font-bold text-emerald-400 font-mono">DCIC</p>
+            <p class="text-xs text-zinc-400 mt-0.5">Ciberseguridad</p>
           </div>
         </div>
+
       </div>
 
-      <!-- Right Column: Interactive Terminal -->
+      <!-- Right Column: Clean UNIX Terminal -->
       <div class="lg:col-span-5 w-full">
         <div class="relative mx-auto w-full max-w-lg">
-          <!-- Terminal Glow -->
-          <div class="absolute -inset-1 rounded-2xl bg-linear-to-r from-blue-600/30 to-purple-600/30 opacity-70 blur-xl"></div>
           
           <!-- Terminal Card -->
-          <div class="relative rounded-2xl border border-white/15 bg-black/80 shadow-2xl backdrop-blur-2xl overflow-hidden font-mono text-xs sm:text-sm">
+          <div class="rounded-2xl border border-zinc-800 bg-[#0d0d11] shadow-xl overflow-hidden font-mono text-xs sm:text-sm">
             <!-- Window Bar -->
-            <div class="flex items-center justify-between px-4 py-3 border-b border-white/10 bg-white/5">
+            <div class="flex items-center justify-between px-4 py-2.5 border-b border-zinc-800 bg-zinc-900/50">
               <div class="flex items-center gap-2">
-                <span class="h-3 w-3 rounded-full bg-rose-500/80"></span>
-                <span class="h-3 w-3 rounded-full bg-amber-500/80"></span>
-                <span class="h-3 w-3 rounded-full bg-emerald-500/80"></span>
-                <span class="ml-2 text-[11px] text-gray-400">julian@macbook: ~</span>
+                <span class="h-2.5 w-2.5 rounded-full bg-zinc-700"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-zinc-700"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-zinc-700"></span>
+                <span class="ml-2 text-[11px] text-zinc-400">julian@portfolio: ~</span>
               </div>
-              <div class="flex items-center gap-1.5 text-[10px] text-gray-400">
-                <span class="h-2 w-2 rounded-full bg-emerald-400"></span> zsh
-              </div>
+              <div class="text-[11px] text-zinc-500">zsh</div>
             </div>
 
-            <!-- Terminal Content Box -->
-            <div id="terminal-body" class="p-4 sm:p-5 h-80 overflow-y-auto space-y-2 text-left">
-              <div class="text-gray-400">
-                Bienvenido al portfolio de <span class="text-blue-400 font-bold">Julián Alconcher</span> (v2.0)
+            <!-- Terminal Body -->
+            <div id="terminal-body" class="p-4 sm:p-5 h-72 overflow-y-auto space-y-2 text-left text-zinc-300">
+              <div class="text-zinc-400">
+                Type <span class="text-zinc-100 font-semibold underline underline-offset-2">help</span> to list available commands.
               </div>
-              <div class="text-gray-400">
-                Escribe <span class="text-emerald-400 font-bold">help</span> para ver los comandos disponibles.
-              </div>
-              <div class="pt-1 text-xs text-blue-300/80" id="terminal-demo-line">
-                <span class="text-emerald-400">demo@shell:~$</span> <span id="terminal-demo-text"></span><span class="animate-pulse">|</span>
+              <div class="pt-0.5 text-xs text-zinc-400" id="terminal-demo-line">
+                <span class="text-zinc-500">➜</span> <span class="text-zinc-400">~</span> <span id="terminal-demo-text"></span><span class="animate-pulse">_</span>
               </div>
 
-              <!-- History Log will be appended here -->
+              <!-- History Log -->
               <div id="terminal-log" class="space-y-2"></div>
 
-              <!-- Active Input Line -->
-              <form id="terminal-form" class="flex items-center gap-2 pt-2">
-                <span class="text-emerald-400 shrink-0 font-bold">julian:~$</span>
+              <!-- Input Form -->
+              <form id="terminal-form" class="flex items-center gap-2 pt-1">
+                <span class="text-zinc-500 font-bold shrink-0">➜</span>
+                <span class="text-zinc-400 shrink-0">~</span>
                 <input
                   id="terminal-input"
                   type="text"
-                  class="flex-1 bg-transparent text-gray-100 outline-none caret-blue-400 placeholder-gray-600"
-                  placeholder="ej: help, projects, skills..."
+                  class="flex-1 bg-transparent text-white outline-none caret-white placeholder-zinc-600"
+                  placeholder="help, projects, skills, whoami..."
                   autocomplete="off"
                   spellcheck="false"
                 />
               </form>
             </div>
 
-            <!-- Quick Command Pills -->
-            <div class="flex flex-wrap items-center gap-1.5 p-2.5 bg-white/5 border-t border-white/10 text-[11px]">
-              <span class="text-gray-400 text-[10px] px-1 font-semibold">Atajos:</span>
-              <button type="button" class="quick-cmd rounded-md bg-white/10 px-2 py-1 text-gray-300 hover:bg-blue-600 hover:text-white transition-colors" data-cmd="help">help</button>
-              <button type="button" class="quick-cmd rounded-md bg-white/10 px-2 py-1 text-gray-300 hover:bg-blue-600 hover:text-white transition-colors" data-cmd="projects">projects</button>
-              <button type="button" class="quick-cmd rounded-md bg-white/10 px-2 py-1 text-gray-300 hover:bg-blue-600 hover:text-white transition-colors" data-cmd="skills">skills</button>
-              <button type="button" class="quick-cmd rounded-md bg-white/10 px-2 py-1 text-gray-300 hover:bg-blue-600 hover:text-white transition-colors" data-cmd="cat about.txt">about</button>
-              <button type="button" class="quick-cmd rounded-md bg-white/10 px-2 py-1 text-gray-300 hover:bg-blue-600 hover:text-white transition-colors" data-cmd="clear">clear</button>
+            <!-- Quick Command Shortcuts -->
+            <div class="flex flex-wrap items-center gap-1.5 px-3 py-2 bg-zinc-900/30 border-t border-zinc-800/80 text-[11px]">
+              <span class="text-zinc-500 text-[10px] pr-1">Shortcuts:</span>
+              <button type="button" class="quick-cmd rounded px-2 py-0.5 bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white transition-colors" data-cmd="help">help</button>
+              <button type="button" class="quick-cmd rounded px-2 py-0.5 bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white transition-colors" data-cmd="projects">projects</button>
+              <button type="button" class="quick-cmd rounded px-2 py-0.5 bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white transition-colors" data-cmd="skills">skills</button>
+              <button type="button" class="quick-cmd rounded px-2 py-0.5 bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white transition-colors" data-cmd="cat about.txt">about</button>
+              <button type="button" class="quick-cmd rounded px-2 py-0.5 bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white transition-colors" data-cmd="clear">clear</button>
             </div>
           </div>
         </div>
@@ -180,12 +163,11 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Sparkles, Code2, Layers, 
   const quickBtns = document.querySelectorAll(".quick-cmd");
 
   const demoPhrases = [
-    "git status",
-    "cat skills.txt",
     "cat about.txt",
-    "open https://github.com/JulianAlconcher",
+    "ls -la projects/",
+    "cat skills.txt",
     "whoami",
-    "ls -la projects/"
+    "git status"
   ];
 
   let phraseIdx = 0;
@@ -211,31 +193,29 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Sparkles, Code2, Layers, 
         phraseIdx = (phraseIdx + 1) % demoPhrases.length;
       }
     }
-    setTimeout(typeDemo, isDeleting ? 40 : 80);
+    setTimeout(typeDemo, isDeleting ? 35 : 75);
   }
   typeDemo();
 
   const commands: Record<string, string> = {
-    help: "Comandos disponibles:\\n  • help          : Muestra esta lista de comandos\\n  • projects      : Muestra los proyectos más destacados\\n  • skills        : Lista el stack tecnológico principal\\n  • whoami        : Muestra información del usuario\\n  • cat about.txt : Lee la biografía y título de Julián\\n  • cat contact.txt: Muestra datos de contacto\\n  • clear         : Limpia la terminal\\n  • github        : Abre el perfil de GitHub",
-    whoami: "Julián Alconcher - Ingeniero en Sistemas de Información (UNS) & Full Stack Dev",
-    "cat about.txt": "Ingeniero en Sistemas de Información graduado en la Universidad Nacional del Sur (UNS). Cursando la Diplomatura en Ciberseguridad Inteligente (DCIC-UNS). Especializado en arquitectura limpia, desarrollo web moderno (React/Next/Astro), apps macOS nativas (Swift) y satelital/AI.",
-    "cat skills.txt": "Stack: TypeScript, React, Astro, Next.js, Python, Swift, C, Java, Node.js, Tailwind, Docker, PostgreSQL, GIS/NDVI, Ciberseguridad.",
-    "cat contact.txt": "Email: alconcherjulian@gmail.com | GitHub: /JulianAlconcher | LinkedIn: /in/julian-alconcher",
-    skills: "Frontend: Astro, React, Next.js, Tailwind, TS\\nBackend: Node.js, Python, Java, PostgreSQL\\nSistemas & Ciberseguridad: Swift, C, Linux, Concurrencia, Ciberseguridad",
-    projects: "AgroLens (Satellite/AI - Proyecto Final), MyNetBuddy (macOS/Swift), DuckWallet (Fintech), EJCO (Web Astro), NetworkMonitor, Ratitas-Bot, y más. Scroll abajo para ver los 16+ proyectos.",
-    github: "Redirigiendo a https://github.com/JulianAlconcher..."
+    help: "Available commands:\n  • help          : Show command list\n  • projects      : List flagship projects\n  • skills        : List primary tech stack\n  • whoami        : User profile info\n  • cat about.txt : Read bio & education\n  • cat contact.txt: Contact info\n  • clear         : Clear terminal output\n  • github        : Open GitHub profile",
+    whoami: "Julián Alconcher — Ingeniero en Sistemas de Información (UNS)",
+    "cat about.txt": "Ingeniero en Sistemas de Información graduado en la Universidad Nacional del Sur (UNS). Cursando la Diplomatura en Ciberseguridad Inteligente (DCIC-UNS). Experiencia en React, Next.js, TypeScript, Python, Swift (macOS) y procesamiento satelital.",
+    "cat skills.txt": "Languages: TypeScript, Python, Swift, Java, C, SQL\nFrontend: React, Next.js, Astro, Tailwind CSS\nBackend: Node.js, Python, PostgreSQL, Prisma, REST APIs\nSecurity: Ciberseguridad Inteligente, Análisis de Vulnerabilidades",
+    "cat contact.txt": "Email: alconcherjulian@gmail.com | LinkedIn: /in/julian-alconcher | GitHub: /JulianAlconcher",
+    skills: "React, Next.js, Astro, TypeScript, Node.js, Python, Swift (macOS), C, PostgreSQL, Docker, Git",
+    projects: "AgroLens (Satellite ML), EJCO (Web Astro), GymLAB (Computer Vision), MovieMerch (E-Commerce), MyNetBuddy (macOS/Swift), DuckWallet (Fintech).",
+    github: "Opening https://github.com/JulianAlconcher..."
   };
 
   function executeCommand(cmdStr: string) {
     const raw = cmdStr.trim();
     if (!raw) return;
-
     const lower = raw.toLowerCase();
 
-    // Create command log
     const cmdLine = document.createElement("div");
-    cmdLine.className = "flex items-center gap-2 text-emerald-400";
-    cmdLine.innerHTML = `<span class="font-bold">julian:~$</span> <span class="text-white">${raw}</span>`;
+    cmdLine.className = "flex items-center gap-2 text-zinc-400";
+    cmdLine.innerHTML = `<span class="text-zinc-500">➜</span> <span class="text-zinc-400">~</span> <span class="text-white">${raw}</span>`;
     log?.appendChild(cmdLine);
 
     if (lower === "clear") {
@@ -249,7 +229,7 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Sparkles, Code2, Layers, 
     }
 
     const outputLine = document.createElement("div");
-    outputLine.className = "text-gray-300 whitespace-pre-line pl-2 border-l-2 border-blue-500/40 text-xs sm:text-sm";
+    outputLine.className = "text-zinc-300 whitespace-pre-line pl-2 border-l border-zinc-700 text-xs sm:text-sm";
 
     if (commands[lower]) {
       outputLine.textContent = commands[lower];
@@ -257,7 +237,7 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Sparkles, Code2, Layers, 
       outputLine.textContent = raw.slice(5);
     } else {
       outputLine.className += " text-rose-400";
-      outputLine.textContent = `zsh: command not found: ${raw}. Escribe "help" para ver los comandos válidos.`;
+      outputLine.textContent = `zsh: command not found: ${raw}. Type "help" for options.`;
     }
 
     log?.appendChild(outputLine);

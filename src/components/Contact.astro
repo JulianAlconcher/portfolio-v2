@@ -1,49 +1,48 @@
 ---
-import { Mail, Linkedin, Github, Send, Copy, Check, MessageSquare, ArrowUpRight } from "lucide-astro";
+import { Mail, Linkedin, Github, Send, Copy, Check, ArrowUpRight } from "lucide-astro";
 ---
 
-<section id="contacto" class="relative py-24 sm:py-32 border-t border-white/10 bg-[#030712]/90">
+<section id="contacto" class="relative py-20 sm:py-28 border-t border-zinc-800/80 bg-[#09090b]">
   <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     
     <!-- Header -->
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <div class="inline-flex items-center gap-2 rounded-lg border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-semibold text-blue-400 mb-3">
-        <MessageSquare class="h-3.5 w-3.5" />
-        <span>Contacto & Oportunidades</span>
-      </div>
-      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-        ¿Iniciamos una conversación?
+    <div class="max-w-2xl mb-12">
+      <p class="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">
+        Contacto
+      </p>
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+        Hablemos
       </h2>
-      <p class="mt-4 text-base sm:text-lg text-gray-400">
-        ¿Tienes una propuesta, un proyecto en mente o simplemente quieres charlar de tecnología? Escríbeme y responderé con gusto.
+      <p class="mt-2 text-sm sm:text-base text-zinc-400">
+        ¿Tienes una propuesta, un proyecto o te gustaría conversar? Puedes escribirme por email o LinkedIn.
       </p>
     </div>
 
     <!-- Contact Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-5xl mx-auto items-stretch">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-5xl items-stretch">
       
-      <!-- Contact Details & Socials (5 cols) -->
-      <div class="lg:col-span-5 h-full flex flex-col justify-between space-y-6 rounded-3xl border border-white/10 bg-slate-900/60 p-6 sm:p-8 backdrop-blur-md">
+      <!-- Contact Details (5 cols) -->
+      <div class="lg:col-span-5 h-full flex flex-col justify-between space-y-6 rounded-2xl border border-zinc-800 bg-[#111114] p-6 sm:p-7">
         
-        <div class="space-y-6">
-          <h3 class="text-xl font-bold text-white">Canales directos</h3>
+        <div class="space-y-5">
+          <h3 class="text-base font-bold text-white">Canales directos</h3>
 
           <!-- Email Card -->
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 space-y-3">
+          <div class="rounded-xl border border-zinc-800 bg-zinc-900/60 p-4 space-y-3">
             <div class="flex items-center gap-3">
-              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/20 text-blue-400">
-                <Mail class="h-5 w-5" />
+              <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-800 text-zinc-200">
+                <Mail class="h-4 w-4" />
               </div>
               <div>
-                <p class="text-xs text-gray-400 font-medium">Correo electrónico</p>
-                <p id="email-text" class="text-sm font-semibold text-white">alconcherjulian@gmail.com</p>
+                <p class="text-[11px] text-zinc-400 font-mono">Email</p>
+                <p id="email-text" class="text-xs sm:text-sm font-semibold text-white">alconcherjulian@gmail.com</p>
               </div>
             </div>
 
-            <div class="flex items-center gap-2 pt-2">
+            <div class="flex items-center gap-2 pt-1">
               <a
                 href="mailto:alconcherjulian@gmail.com"
-                class="flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl bg-blue-600 px-3 py-2 text-xs font-semibold text-white hover:bg-blue-500 transition-colors"
+                class="flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg bg-white px-3 py-2 text-xs font-semibold text-zinc-900 hover:bg-zinc-200 transition-colors"
               >
                 <Mail class="h-3.5 w-3.5" />
                 <span>Enviar Email</span>
@@ -52,8 +51,8 @@ import { Mail, Linkedin, Github, Send, Copy, Check, MessageSquare, ArrowUpRight 
               <button
                 id="copy-email-btn"
                 type="button"
-                class="inline-flex items-center justify-center gap-1 rounded-xl border border-white/15 bg-white/10 px-3 py-2 text-xs font-semibold text-gray-200 hover:bg-white/20 transition-all"
-                title="Copiar email al portapapeles"
+                class="inline-flex items-center justify-center gap-1 rounded-lg border border-zinc-700 bg-zinc-800 px-3 py-2 text-xs font-medium text-zinc-200 hover:bg-zinc-700 transition-colors cursor-pointer"
+                title="Copiar email"
               >
                 <Copy id="copy-icon" class="h-3.5 w-3.5" />
                 <Check id="check-icon" class="h-3.5 w-3.5 text-emerald-400 hidden" />
@@ -68,104 +67,106 @@ import { Mail, Linkedin, Github, Send, Copy, Check, MessageSquare, ArrowUpRight 
               href="https://github.com/JulianAlconcher"
               target="_blank"
               rel="noopener noreferrer"
-              class="group flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-3.5 text-gray-300 hover:border-white/20 hover:bg-white/10 hover:text-white transition-all"
+              class="group flex items-center justify-between rounded-xl border border-zinc-800 bg-zinc-900/40 p-3 text-zinc-300 hover:bg-zinc-800 hover:text-white transition-colors"
             >
               <div class="flex items-center gap-3">
-                <div class="rounded-lg bg-white/10 p-2 text-white">
+                <div class="rounded-lg bg-zinc-800 p-1.5 text-zinc-300">
                   <Github class="h-4 w-4" />
                 </div>
-                <span class="text-sm font-medium">GitHub / JulianAlconcher</span>
+                <span class="text-xs font-medium">GitHub / JulianAlconcher</span>
               </div>
-              <ArrowUpRight class="h-4 w-4 text-gray-500 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+              <ArrowUpRight class="h-3.5 w-3.5 text-zinc-500 group-hover:text-white transition-colors" />
             </a>
 
             <a
               href="https://www.linkedin.com/in/julian-alconcher"
               target="_blank"
               rel="noopener noreferrer"
-              class="group flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-3.5 text-gray-300 hover:border-white/20 hover:bg-white/10 hover:text-white transition-all"
+              class="group flex items-center justify-between rounded-xl border border-zinc-800 bg-zinc-900/40 p-3 text-zinc-300 hover:bg-zinc-800 hover:text-white transition-colors"
             >
               <div class="flex items-center gap-3">
-                <div class="rounded-lg bg-blue-500/20 p-2 text-blue-400">
+                <div class="rounded-lg bg-zinc-800 p-1.5 text-zinc-300">
                   <Linkedin class="h-4 w-4" />
                 </div>
-                <span class="text-sm font-medium">LinkedIn / in/julian-alconcher</span>
+                <span class="text-xs font-medium">LinkedIn / in/julian-alconcher</span>
               </div>
-              <ArrowUpRight class="h-4 w-4 text-gray-500 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+              <ArrowUpRight class="h-3.5 w-3.5 text-zinc-500 group-hover:text-white transition-colors" />
             </a>
           </div>
         </div>
 
-        <!-- Response Time Badge -->
-        <div class="pt-4 border-t border-white/10 flex items-center gap-2 text-xs text-emerald-400">
-          <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>Tiempo de respuesta habitual: &lt; 24hs</span>
+        <!-- Note -->
+        <div class="pt-4 border-t border-zinc-800 flex items-center gap-2 text-xs text-zinc-400 font-mono">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+          <span>Respuesta habitual en &lt; 24hs</span>
         </div>
 
       </div>
 
       <!-- Quick Message Form (7 cols) -->
-      <div class="lg:col-span-7 h-full flex flex-col justify-between rounded-3xl border border-white/10 bg-slate-900/60 p-6 sm:p-8 backdrop-blur-md">
-        <h3 class="text-xl font-bold text-white mb-2">Envíame un mensaje</h3>
-        <p class="text-xs text-gray-400 mb-6">Completa el formulario para enviarme un correo directamente.</p>
+      <div class="lg:col-span-7 h-full flex flex-col justify-between rounded-2xl border border-zinc-800 bg-[#111114] p-6 sm:p-7">
+        <div>
+          <h3 class="text-base font-bold text-white mb-1">Envíame un mensaje</h3>
+          <p class="text-xs text-zinc-400 mb-5">Completa el formulario para abrir tu cliente de correo con el mensaje listo.</p>
 
-        <form id="contact-form" class="space-y-4">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <form id="contact-form" class="space-y-3.5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div>
+                <label for="contact-name" class="block text-xs font-medium text-zinc-300 mb-1">Nombre</label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  required
+                  placeholder="Tu nombre"
+                  class="w-full rounded-xl border border-zinc-800 bg-zinc-900 px-3.5 py-2 text-xs sm:text-sm text-white placeholder-zinc-500 outline-none focus:border-zinc-600 transition-colors"
+                />
+              </div>
+              <div>
+                <label for="contact-email" class="block text-xs font-medium text-zinc-300 mb-1">Email</label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  required
+                  placeholder="tu@email.com"
+                  class="w-full rounded-xl border border-zinc-800 bg-zinc-900 px-3.5 py-2 text-xs sm:text-sm text-white placeholder-zinc-500 outline-none focus:border-zinc-600 transition-colors"
+                />
+              </div>
+            </div>
+
             <div>
-              <label for="contact-name" class="block text-xs font-semibold text-gray-300 mb-1.5">Tu Nombre</label>
+              <label for="contact-subject" class="block text-xs font-medium text-zinc-300 mb-1">Asunto</label>
               <input
                 type="text"
-                id="contact-name"
+                id="contact-subject"
                 required
-                placeholder="Nombre o empresa"
-                class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder-gray-500 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all"
+                placeholder="Proyecto, propuesta laboral..."
+                class="w-full rounded-xl border border-zinc-800 bg-zinc-900 px-3.5 py-2 text-xs sm:text-sm text-white placeholder-zinc-500 outline-none focus:border-zinc-600 transition-colors"
               />
             </div>
+
             <div>
-              <label for="contact-email" class="block text-xs font-semibold text-gray-300 mb-1.5">Tu Email</label>
-              <input
-                type="email"
-                id="contact-email"
+              <label for="contact-msg" class="block text-xs font-medium text-zinc-300 mb-1">Mensaje</label>
+              <textarea
+                id="contact-msg"
                 required
-                placeholder="correo@ejemplo.com"
-                class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder-gray-500 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all"
-              />
+                rows="4"
+                placeholder="Escribe tu mensaje aquí..."
+                class="w-full rounded-xl border border-zinc-800 bg-zinc-900 px-3.5 py-2 text-xs sm:text-sm text-white placeholder-zinc-500 outline-none focus:border-zinc-600 transition-colors resize-none"
+              ></textarea>
             </div>
+
+            <button
+              type="submit"
+              class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-white py-2.5 px-4 text-xs font-semibold text-zinc-900 hover:bg-zinc-200 transition-colors cursor-pointer"
+            >
+              <Send class="h-3.5 w-3.5" />
+              <span>Enviar Mensaje</span>
+            </button>
+          </form>
+
+          <div id="form-feedback" class="hidden mt-3 rounded-xl border border-zinc-700 bg-zinc-900 p-3 text-xs text-zinc-300 text-center">
+            Redirigiendo a tu cliente de correo para enviar el mensaje...
           </div>
-
-          <div>
-            <label for="contact-subject" class="block text-xs font-semibold text-gray-300 mb-1.5">Asunto</label>
-            <input
-              type="text"
-              id="contact-subject"
-              required
-              placeholder="Proyecto, propuesta laboral, consulta..."
-              class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder-gray-500 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all"
-            />
-          </div>
-
-          <div>
-            <label for="contact-msg" class="block text-xs font-semibold text-gray-300 mb-1.5">Mensaje</label>
-            <textarea
-              id="contact-msg"
-              required
-              rows="4"
-              placeholder="Cuéntame sobre tu proyecto o necesidad..."
-              class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder-gray-500 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all resize-none"
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-linear-to-r from-blue-600 to-indigo-600 py-3 px-6 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 hover:brightness-110 hover:shadow-blue-500/30 transition-all cursor-pointer"
-          >
-            <Send class="h-4 w-4" />
-            <span>Enviar Mensaje</span>
-          </button>
-        </form>
-
-        <div id="form-feedback" class="hidden mt-4 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-3 text-xs text-emerald-300 text-center">
-          ¡Gracias por escribir! Redirigiendo a tu cliente de correo para enviar el mensaje...
         </div>
       </div>
 
@@ -175,7 +176,6 @@ import { Mail, Linkedin, Github, Send, Copy, Check, MessageSquare, ArrowUpRight 
 </section>
 
 <script>
-  // Copy Email Clipboard
   const copyBtn = document.getElementById("copy-email-btn");
   const copyIcon = document.getElementById("copy-icon");
   const checkIcon = document.getElementById("check-icon");
@@ -198,7 +198,6 @@ import { Mail, Linkedin, Github, Send, Copy, Check, MessageSquare, ArrowUpRight 
     }
   });
 
-  // Contact Form Mailto redirect
   const contactForm = document.getElementById("contact-form") as HTMLFormElement;
   const feedback = document.getElementById("form-feedback") as HTMLElement;
 
@@ -215,6 +214,6 @@ import { Mail, Linkedin, Github, Send, Copy, Check, MessageSquare, ArrowUpRight 
     
     setTimeout(() => {
       window.location.href = mailtoUri;
-    }, 600);
+    }, 500);
   });
 </script>
