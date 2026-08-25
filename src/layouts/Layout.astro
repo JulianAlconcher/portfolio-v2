@@ -42,8 +42,9 @@ const {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <!-- Theme Initialization (Defaults to OS/Browser preference) -->
+    <!-- Theme & Language Initialization (Defaults to OS/Browser preference) -->
     <script is:inline>
+      // Theme Detection
       const getThemePreference = () => {
         if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
           return localStorage.getItem('theme');
@@ -72,6 +73,18 @@ const {
           }
         }
       });
+
+      // Language Detection (Defaults to Browser/OS language)
+      const getLangPreference = () => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) {
+          return localStorage.getItem('lang');
+        }
+        const browserLang = (navigator.language || (navigator.languages && navigator.languages[0]) || 'es').toLowerCase();
+        return browserLang.startsWith('es') ? 'es' : 'en';
+      };
+
+      const currentLang = getLangPreference();
+      document.documentElement.setAttribute('lang', currentLang);
     </script>
 
     <style>
@@ -92,5 +105,6 @@ const {
       </main>
       <Footer />
     </div>
+    <script src="../scripts/i18n-client.ts"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 ---
-import { Github, Menu, X, Sun, Moon } from "lucide-astro";
+import { Github, Menu, X, Sun, Moon, Languages } from "lucide-astro";
 ---
 
 <header class="sticky top-0 z-50 w-full border-b border-zinc-200/80 bg-white/80 dark:border-zinc-800/80 dark:bg-[#09090b]/80 backdrop-blur-xl transition-colors duration-200">
@@ -11,7 +11,7 @@ import { Github, Menu, X, Sun, Moon } from "lucide-astro";
       </div>
       <div class="flex flex-col">
         <span class="leading-none font-bold tracking-tight text-zinc-900 dark:text-white">Julián Alconcher</span>
-        <span class="text-[11px] font-mono text-zinc-500 dark:text-zinc-400">Ingeniero en Sistemas · Full Stack</span>
+        <span class="text-[11px] font-mono text-zinc-500 dark:text-zinc-400" data-i18n="nav.sublabel">Ingeniero en Sistemas · Full Stack</span>
       </div>
     </a>
 
@@ -20,31 +20,47 @@ import { Github, Menu, X, Sun, Moon } from "lucide-astro";
       <a
         href="#proyectos"
         class="nav-link rounded-full px-3.5 py-1 text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all"
+        data-i18n="nav.projects"
       >
         Proyectos
       </a>
       <a
         href="#habilidades"
         class="nav-link rounded-full px-3.5 py-1 text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all"
+        data-i18n="nav.skills"
       >
         Habilidades
       </a>
       <a
         href="#sobre-mi"
         class="nav-link rounded-full px-3.5 py-1 text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all"
+        data-i18n="nav.about"
       >
         Sobre mí
       </a>
       <a
         href="#contacto"
         class="nav-link rounded-full px-3.5 py-1 text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all"
+        data-i18n="nav.contact"
       >
         Contacto
       </a>
     </nav>
 
-    <!-- Actions & Theme Toggle -->
-    <div class="flex items-center gap-2.5">
+    <!-- Actions & Toggles -->
+    <div class="flex items-center gap-2">
+      
+      <!-- Language Toggle Button -->
+      <button
+        type="button"
+        class="lang-toggle-btn inline-flex items-center justify-center gap-1.5 h-9 px-2.5 rounded-xl border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900/80 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors cursor-pointer text-xs font-mono font-bold"
+        aria-label="Cambiar idioma (ES/EN)"
+        title="Cambiar idioma (ES/EN)"
+      >
+        <Languages class="h-3.5 w-3.5 text-zinc-500 dark:text-zinc-400" />
+        <span class="current-lang-text">ES</span>
+      </button>
+
       <!-- Theme Toggle Button -->
       <button
         id="theme-toggle-btn"
@@ -71,6 +87,7 @@ import { Github, Menu, X, Sun, Moon } from "lucide-astro";
       <a
         href="#contacto"
         class="hidden sm:inline-flex items-center rounded-xl bg-zinc-900 dark:bg-white px-3.5 py-1.5 text-xs font-semibold text-white dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors shadow-xs"
+        data-i18n="nav.talk"
       >
         Contacto
       </a>
@@ -91,32 +108,36 @@ import { Github, Menu, X, Sun, Moon } from "lucide-astro";
   <!-- Mobile Dropdown Menu -->
   <div id="mobile-menu" class="hidden md:hidden border-b border-zinc-200 bg-white/95 dark:border-zinc-800 dark:bg-[#09090b]/95 px-4 pt-3 pb-5 backdrop-blur-xl">
     <div class="flex flex-col space-y-2">
-      <a href="#proyectos" class="mobile-link rounded-lg px-3 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all">
+      <a href="#proyectos" class="mobile-link rounded-lg px-3 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all" data-i18n="nav.projects">
         Proyectos
       </a>
-      <a href="#habilidades" class="mobile-link rounded-lg px-3 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all">
+      <a href="#habilidades" class="mobile-link rounded-lg px-3 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all" data-i18n="nav.skills">
         Habilidades
       </a>
-      <a href="#sobre-mi" class="mobile-link rounded-lg px-3 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all">
+      <a href="#sobre-mi" class="mobile-link rounded-lg px-3 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all" data-i18n="nav.about">
         Sobre mí
       </a>
-      <a href="#contacto" class="mobile-link rounded-lg px-3 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all">
+      <a href="#contacto" class="mobile-link rounded-lg px-3 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all" data-i18n="nav.contact">
         Contacto
       </a>
-      <div class="pt-2 flex items-center gap-3">
+      <div class="pt-2 flex items-center gap-2.5">
+        <button
+          type="button"
+          class="lang-toggle-btn flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900 py-2 text-xs font-mono font-bold text-zinc-700 dark:text-zinc-300"
+        >
+          <Languages class="h-3.5 w-3.5" />
+          <span>Idioma:</span>
+          <span class="current-lang-text">ES</span>
+        </button>
+
         <a
           href="https://github.com/JulianAlconcher"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex-1 inline-flex items-center justify-center gap-2 rounded-xl border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900 py-2.5 text-xs font-medium text-zinc-700 dark:text-zinc-300"
+          class="inline-flex items-center justify-center gap-1.5 rounded-xl border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900 p-2 text-xs font-medium text-zinc-700 dark:text-zinc-300"
+          aria-label="GitHub"
         >
-          <Github class="h-4 w-4" /> GitHub
-        </a>
-        <a
-          href="#contacto"
-          class="mobile-link flex-1 inline-flex items-center justify-center rounded-xl bg-zinc-900 dark:bg-white py-2.5 text-xs font-semibold text-white dark:text-zinc-900"
-        >
-          Contacto
+          <Github class="h-4 w-4" />
         </a>
       </div>
     </div>

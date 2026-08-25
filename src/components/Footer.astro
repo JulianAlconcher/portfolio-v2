@@ -11,11 +11,11 @@ import { Github, Linkedin, Mail, ArrowUp } from "lucide-astro";
         <p class="font-bold text-zinc-900 dark:text-white tracking-tight text-base">
           Julián Alconcher
         </p>
-        <p class="text-xs text-zinc-500 dark:text-zinc-400">
+        <p class="text-xs text-zinc-500 dark:text-zinc-400" data-i18n="footer.location">
           Ingeniero en Sistemas de Información · Bahía Blanca, Argentina.
         </p>
         <p class="text-[11px] text-zinc-400 dark:text-zinc-500 font-mono pt-1">
-          © {new Date().getFullYear()} Julián Alconcher
+          © {new Date().getFullYear()} Julián Alconcher · <span data-i18n="footer.rights">Todos los derechos reservados.</span>
         </p>
       </div>
 
@@ -62,7 +62,7 @@ import { Github, Linkedin, Mail, ArrowUp } from "lucide-astro";
           title="Volver arriba"
         >
           <ArrowUp class="h-3.5 w-3.5" />
-          <span class="hidden sm:inline">Arriba</span>
+          <span class="hidden sm:inline" data-i18n="footer.backToTop">Arriba</span>
         </a>
       </div>
     </div>

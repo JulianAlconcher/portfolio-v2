@@ -12,7 +12,7 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Download } from "lucide-a
         <!-- Location / Status Tag -->
         <div class="inline-flex items-center gap-2.5 rounded-full border border-zinc-300 dark:border-white/10 bg-zinc-100/90 dark:bg-zinc-900/80 px-3.5 py-1.5 text-xs text-zinc-700 dark:text-zinc-300 mb-6 backdrop-blur-sm shadow-xs">
           <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span>Ingeniero en Sistemas de Información · UNS</span>
+          <span data-i18n="hero.status">Ingeniero en Sistemas de Información · UNS</span>
         </div>
 
         <!-- Main Title -->
@@ -22,7 +22,7 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Download } from "lucide-a
 
         <!-- Subtitle & Bio -->
         <p class="text-lg sm:text-xl text-zinc-600 dark:text-zinc-300 max-w-2xl font-normal leading-relaxed mb-8">
-          <span class="text-zinc-900 dark:text-white font-semibold">Ingeniero en Sistemas de Información</span> y <span class="text-zinc-900 dark:text-white font-semibold">Desarrollador Full Stack</span>. Construyo aplicaciones web modernas y software de alto rendimiento con tecnologías como <span class="text-zinc-800 dark:text-zinc-200 font-medium">React, Next.js, TypeScript, Node.js, Python, PostgreSQL, Swift y Tailwind CSS</span>.
+          <span class="text-zinc-900 dark:text-white font-semibold" data-i18n="hero.degree">Ingeniero en Sistemas de Información</span> <span data-i18n="hero.bio">y Desarrollador Full Stack. Construyo aplicaciones web modernas y software de alto rendimiento con tecnologías como React, Next.js, TypeScript, Node.js, Python, PostgreSQL, Swift y Tailwind CSS.</span>
         </p>
 
         <!-- Action Buttons (Clean & Solid) -->
@@ -31,7 +31,7 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Download } from "lucide-a
             href="#proyectos"
             class="inline-flex items-center gap-2 rounded-xl bg-zinc-900 dark:bg-white px-5 py-2.5 text-sm font-semibold text-white dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors shadow-sm"
           >
-            <span>Ver Proyectos</span>
+            <span data-i18n="hero.btnProjects">Ver Proyectos</span>
             <ArrowRight class="h-4 w-4 text-zinc-400 dark:text-zinc-700" />
           </a>
 
@@ -41,7 +41,7 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Download } from "lucide-a
             class="inline-flex items-center gap-2 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900/90 px-4 py-2.5 text-sm font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-950 dark:hover:text-white transition-colors shadow-xs"
           >
             <Download class="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
-            <span>Descargar CV</span>
+            <span data-i18n="hero.btnCv">Descargar CV</span>
           </a>
 
           <a
@@ -49,7 +49,7 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Download } from "lucide-a
             class="inline-flex items-center gap-2 rounded-xl border border-zinc-300 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/50 px-4 py-2.5 text-sm font-semibold text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white transition-colors"
           >
             <Mail class="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
-            <span>Contacto</span>
+            <span data-i18n="hero.btnContact">Contacto</span>
           </a>
 
           <div class="flex items-center gap-1.5 pl-1">
@@ -79,15 +79,15 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Download } from "lucide-a
         <div class="grid grid-cols-3 gap-6 pt-6 border-t border-zinc-200 dark:border-zinc-800/80 w-full max-w-lg text-left">
           <div>
             <p class="text-xl font-bold text-zinc-900 dark:text-white font-mono">15</p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">Repositorios</p>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5" data-i18n="hero.statsRepos">Repositorios</p>
           </div>
           <div>
             <p class="text-xl font-bold text-zinc-900 dark:text-white font-mono">UNS</p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">Ing. en Sistemas</p>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5" data-i18n="hero.statsDegree">Ing. en Sistemas</p>
           </div>
           <div>
             <p class="text-xl font-bold text-emerald-600 dark:text-emerald-400 font-mono">DCIC</p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">Ciberseguridad</p>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5" data-i18n="hero.statsCyber">Ciberseguridad</p>
           </div>
         </div>
 
@@ -112,7 +112,7 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Download } from "lucide-a
 
             <!-- Terminal Body -->
             <div id="terminal-body" class="p-4 sm:p-5 h-72 overflow-y-auto space-y-2 text-left text-zinc-300">
-              <div class="text-zinc-400">
+              <div class="text-zinc-400" id="terminal-hint">
                 Type <span class="text-zinc-100 font-semibold underline underline-offset-2">help</span> to list available commands.
               </div>
               <div class="pt-0.5 text-xs text-zinc-400" id="terminal-demo-line">
@@ -139,7 +139,7 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Download } from "lucide-a
 
             <!-- Quick Command Shortcuts -->
             <div class="flex flex-wrap items-center gap-1.5 px-3 py-2 bg-zinc-900/30 border-t border-zinc-800/80 text-[11px]">
-              <span class="text-zinc-500 text-[10px] pr-1">Shortcuts:</span>
+              <span class="text-zinc-500 text-[10px] pr-1" data-i18n="terminal.shortcuts">Shortcuts:</span>
               <button type="button" class="quick-cmd rounded px-2 py-0.5 bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white transition-colors" data-cmd="help">help</button>
               <button type="button" class="quick-cmd rounded px-2 py-0.5 bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white transition-colors" data-cmd="projects">projects</button>
               <button type="button" class="quick-cmd rounded px-2 py-0.5 bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white transition-colors" data-cmd="skills">skills</button>
@@ -155,12 +155,47 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Download } from "lucide-a
 </section>
 
 <script>
+  import { translations, type Lang } from "../data/i18n";
+
   const form = document.getElementById("terminal-form") as HTMLFormElement;
   const input = document.getElementById("terminal-input") as HTMLInputElement;
   const log = document.getElementById("terminal-log") as HTMLElement;
   const body = document.getElementById("terminal-body") as HTMLElement;
   const demoTextEl = document.getElementById("terminal-demo-text") as HTMLElement;
   const quickBtns = document.querySelectorAll(".quick-cmd");
+  const hintEl = document.getElementById("terminal-hint");
+
+  let currentLang: Lang = (document.documentElement.getAttribute("lang") as Lang) || "es";
+
+  function getCommands(lang: Lang): Record<string, string> {
+    const t = translations[lang].terminal;
+    return {
+      help: lang === "es"
+        ? "Comandos disponibles:\n  • help          : Ver lista de comandos\n  • projects      : Listar proyectos destacados\n  • skills        : Listar tecnologías principales\n  • whoami        : Información de perfil\n  • cat about.txt : Leer biografía y educación\n  • cat contact.txt: Información de contacto\n  • clear         : Limpiar pantalla\n  • github        : Abrir perfil de GitHub"
+        : "Available commands:\n  • help          : Show command list\n  • projects      : List flagship projects\n  • skills        : List primary tech stack\n  • whoami        : User profile info\n  • cat about.txt : Read bio & education\n  • cat contact.txt: Contact info\n  • clear         : Clear terminal output\n  • github        : Open GitHub profile",
+      whoami: t.whoami,
+      "cat about.txt": t.aboutText,
+      "cat skills.txt": t.skillsText,
+      "cat contact.txt": t.contactText,
+      skills: lang === "es"
+        ? "React, Next.js, Astro, TypeScript, Node.js, Python, Swift (macOS), C, PostgreSQL, Docker, Git"
+        : "React, Next.js, Astro, TypeScript, Node.js, Python, Swift (macOS), C, PostgreSQL, Docker, Git",
+      projects: t.projectsText,
+      github: lang === "es" ? "Abriendo https://github.com/JulianAlconcher..." : "Opening https://github.com/JulianAlconcher..."
+    };
+  }
+
+  let commands = getCommands(currentLang);
+
+  window.addEventListener("portfolio-lang-change", (e: any) => {
+    currentLang = e.detail.lang;
+    commands = getCommands(currentLang);
+    if (hintEl) {
+      hintEl.innerHTML = currentLang === "es"
+        ? 'Escribe <span class="text-zinc-100 font-semibold underline underline-offset-2">help</span> para listar comandos disponibles.'
+        : 'Type <span class="text-zinc-100 font-semibold underline underline-offset-2">help</span> to list available commands.';
+    }
+  });
 
   const demoPhrases = [
     "cat about.txt",
@@ -197,17 +232,6 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Download } from "lucide-a
   }
   typeDemo();
 
-  const commands: Record<string, string> = {
-    help: "Available commands:\n  • help          : Show command list\n  • projects      : List flagship projects\n  • skills        : List primary tech stack\n  • whoami        : User profile info\n  • cat about.txt : Read bio & education\n  • cat contact.txt: Contact info\n  • clear         : Clear terminal output\n  • github        : Open GitHub profile",
-    whoami: "Julián Alconcher — Ingeniero en Sistemas de Información (UNS)",
-    "cat about.txt": "Ingeniero en Sistemas de Información graduado en la Universidad Nacional del Sur (UNS). Cursando la Diplomatura en Ciberseguridad Inteligente (DCIC-UNS). Experiencia en React, Next.js, TypeScript, Python, Swift (macOS) y procesamiento satelital.",
-    "cat skills.txt": "Languages: TypeScript, Python, Swift, Java, C, SQL\nFrontend: React, Next.js, Astro, Tailwind CSS\nBackend: Node.js, Python, PostgreSQL, Prisma, REST APIs\nSecurity: Ciberseguridad Inteligente, Análisis de Vulnerabilidades",
-    "cat contact.txt": "Email: alconcherjulian@gmail.com | LinkedIn: /in/julian-alconcher | GitHub: /JulianAlconcher",
-    skills: "React, Next.js, Astro, TypeScript, Node.js, Python, Swift (macOS), C, PostgreSQL, Docker, Git",
-    projects: "AgroLens (Satellite ML), EJCO (Web Astro), GymLAB (Computer Vision), MovieMerch (E-Commerce), MyNetBuddy (macOS/Swift), DuckWallet (Fintech).",
-    github: "Opening https://github.com/JulianAlconcher..."
-  };
-
   function executeCommand(cmdStr: string) {
     const raw = cmdStr.trim();
     if (!raw) return;
@@ -237,7 +261,9 @@ import { ArrowRight, Mail, Github, Linkedin, Terminal, Download } from "lucide-a
       outputLine.textContent = raw.slice(5);
     } else {
       outputLine.className += " text-rose-400";
-      outputLine.textContent = `zsh: command not found: ${raw}. Type "help" for options.`;
+      outputLine.textContent = currentLang === "es"
+        ? `zsh: comando no encontrado: ${raw}. Escribe "help" para ver opciones.`
+        : `zsh: command not found: ${raw}. Type "help" for options.`;
     }
 
     log?.appendChild(outputLine);

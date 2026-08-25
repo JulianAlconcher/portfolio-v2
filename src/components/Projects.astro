@@ -9,13 +9,13 @@ import { Github, ExternalLink, Search, Layers, Star, AlertCircle } from "lucide-
     <!-- Section Header -->
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
       <div>
-        <p class="text-xs font-mono uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">
+        <p class="text-xs font-mono uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2" data-i18n="projects.subtitle">
           Portfolio de Software
         </p>
-        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 dark:text-white">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 dark:text-white" data-i18n="projects.title">
           Proyectos & Aplicaciones
         </h2>
-        <p class="mt-2 text-sm sm:text-base text-zinc-600 dark:text-zinc-400 max-w-2xl">
+        <p class="mt-2 text-sm sm:text-base text-zinc-600 dark:text-zinc-400 max-w-2xl" data-i18n="projects.desc">
           Soluciones de agricultura satelital con Machine Learning, sitios web en producción, aplicaciones de sistemas en macOS y proyectos de código abierto.
         </p>
       </div>
@@ -42,6 +42,7 @@ import { Github, ExternalLink, Search, Layers, Star, AlertCircle } from "lucide-
           id="project-search"
           type="text"
           placeholder="Buscar por tecnología o nombre (ej: React, Swift, NDVI)..."
+          data-i18n-placeholder="projects.searchPlaceholder"
           class="w-full rounded-xl border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/80 pl-10 pr-8 py-2.5 text-xs sm:text-sm text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-500 outline-none focus:border-zinc-500 dark:focus:border-zinc-600 transition-colors font-sans shadow-xs"
         />
         <button
@@ -63,7 +64,7 @@ import { Github, ExternalLink, Search, Layers, Star, AlertCircle } from "lucide-
             data-category={cat.id}
             data-active={cat.id === "all" ? "true" : "false"}
           >
-            <span>{cat.label}</span>
+            <span class="cat-label" data-cat-id={cat.id}>{cat.label}</span>
             <span class="text-[10px] text-zinc-400 dark:text-zinc-500 font-mono">
               {cat.count}
             </span>
@@ -74,7 +75,7 @@ import { Github, ExternalLink, Search, Layers, Star, AlertCircle } from "lucide-
       <!-- Live Counter -->
       <div class="flex items-center justify-between text-xs text-zinc-500 font-mono">
         <span id="results-count">Mostrando {projects.length} de {projects.length} proyectos</span>
-        <button id="reset-filters" class="hidden text-zinc-600 dark:text-zinc-400 hover:underline">Restablecer</button>
+        <button id="reset-filters" class="hidden text-zinc-600 dark:text-zinc-400 hover:underline" data-i18n="projects.reset">Restablecer</button>
       </div>
     </div>
 
@@ -137,7 +138,7 @@ import { Github, ExternalLink, Search, Layers, Star, AlertCircle } from "lucide-
 
               <!-- Challenge / Note Box with uniform fixed height & alignment -->
               <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 p-3 text-xs min-h-[4.75rem] flex flex-col justify-center">
-                <span class="font-mono text-[10px] uppercase text-zinc-500 block mb-0.5 font-semibold">Desafío</span>
+                <span class="font-mono text-[10px] uppercase text-zinc-500 block mb-0.5 font-semibold" data-i18n="projects.challenge">Desafío</span>
                 <span class="text-zinc-700 dark:text-zinc-300 line-clamp-2 leading-relaxed">{project.challenge}</span>
               </div>
             </div>
@@ -170,7 +171,7 @@ import { Github, ExternalLink, Search, Layers, Star, AlertCircle } from "lucide-
                       title="Ver Código"
                     >
                       <Github class="h-3.5 w-3.5" />
-                      <span>Repo</span>
+                      <span data-i18n="projects.repo">Repo</span>
                     </a>
                   )}
 
@@ -183,7 +184,7 @@ import { Github, ExternalLink, Search, Layers, Star, AlertCircle } from "lucide-
                       title="Ver Sitio en Vivo"
                     >
                       <ExternalLink class="h-3 w-3" />
-                      <span>Live</span>
+                      <span data-i18n="projects.live">Live</span>
                     </a>
                   )}
                 </div>
@@ -200,14 +201,15 @@ import { Github, ExternalLink, Search, Layers, Star, AlertCircle } from "lucide-
       <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-500 mb-3">
         <AlertCircle class="h-6 w-6" />
       </div>
-      <h3 class="text-sm font-semibold text-zinc-900 dark:text-white mb-1">No se encontraron proyectos</h3>
-      <p class="text-xs text-zinc-500 max-w-sm mx-auto mb-4">
+      <h3 class="text-sm font-semibold text-zinc-900 dark:text-white mb-1" data-i18n="projects.noResultsTitle">No se encontraron proyectos</h3>
+      <p class="text-xs text-zinc-500 max-w-sm mx-auto mb-4" data-i18n="projects.noResultsDesc">
         Prueba buscando con otro término o seleccionando "Todos".
       </p>
       <button
         id="empty-reset-btn"
         type="button"
         class="inline-flex items-center gap-2 rounded-lg bg-zinc-900 dark:bg-zinc-800 px-3.5 py-1.5 text-xs font-medium text-white hover:bg-zinc-800 dark:hover:bg-zinc-700 transition-colors"
+        data-i18n="projects.clearFilters"
       >
         Limpiar Filtros
       </button>
@@ -217,8 +219,11 @@ import { Github, ExternalLink, Search, Layers, Star, AlertCircle } from "lucide-
 </section>
 
 <script>
+  import { translations, type Lang } from "../data/i18n";
+
   let activeCategory = "all";
   let searchQuery = "";
+  let currentLang: Lang = (document.documentElement.getAttribute("lang") as Lang) || "es";
 
   const searchInput = document.getElementById("project-search") as HTMLInputElement;
   const clearSearchBtn = document.getElementById("clear-search-btn") as HTMLButtonElement;
@@ -229,6 +234,22 @@ import { Github, ExternalLink, Search, Layers, Star, AlertCircle } from "lucide-
   const emptyResetBtn = document.getElementById("empty-reset-btn") as HTMLButtonElement;
   const noResults = document.getElementById("no-results") as HTMLElement;
   const totalCount = projectCards.length;
+
+  function updateCategoryLabels(lang: Lang) {
+    const t = translations[lang].projects.categories;
+    document.querySelectorAll(".cat-label").forEach((el) => {
+      const catId = el.getAttribute("data-cat-id");
+      if (catId && t[catId]) {
+        el.textContent = t[catId];
+      }
+    });
+  }
+
+  window.addEventListener("portfolio-lang-change", (e: any) => {
+    currentLang = e.detail.lang;
+    updateCategoryLabels(currentLang);
+    applyFilters();
+  });
 
   function applyFilters() {
     let visibleCount = 0;
@@ -266,7 +287,8 @@ import { Github, ExternalLink, Search, Layers, Star, AlertCircle } from "lucide-
     });
 
     if (resultsCount) {
-      resultsCount.textContent = `Mostrando ${visibleCount} de ${totalCount} proyectos`;
+      const t = translations[currentLang].projects;
+      resultsCount.textContent = `${t.showing} ${visibleCount} ${t.of} ${totalCount} ${t.projectsCount}`;
     }
 
     if (visibleCount === 0) {
