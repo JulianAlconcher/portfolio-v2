@@ -24,7 +24,7 @@ export const categories: Category[] = [
   {
     "id": "all",
     "label": "Todos",
-    "count": 16
+    "count": 15
   },
   {
     "id": "featured",
@@ -44,7 +44,7 @@ export const categories: Category[] = [
   {
     "id": "academic",
     "label": "IA, Visión & CS",
-    "count": 5
+    "count": 4
   },
   {
     "id": "systems",
@@ -384,25 +384,5 @@ export const projects: Project[] = [
     "image": "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=1600",
     "stars": 0,
     "badge": "Algorithms"
-  },
-  {
-    "id": "game-2248-prolog",
-    "title": "2248 Logic Game (React + Prolog)",
-    "description": "Recreación del juego de combinación numérica 2248 con interfaz interactiva en React y motor lógico de resolución de caminos en Prolog.",
-    "challenge": "Integrar el paradigma de programación lógica con un frontend reactivo moderno.",
-    "category": "academic",
-    "featured": false,
-    "tech": [
-      "React",
-      "Prolog",
-      "Logic Programming",
-      "Algorithms"
-    ],
-    "role": "Developer",
-    "github": "https://github.com/JulianAlconcher/Proyecto-1-LCC",
-    "demo": null,
-    "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=1600",
-    "stars": 1,
-    "badge": "Logic & React"
   }
 ];
